@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devillier Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="opener" class="opener-screen" style="opacity:1; z-index:10001;">
+      <div class="opener-lines">
+        <div>Our specialty is ideas.</div>
+        <div>They come to us easily, so why not have an ideas team on your side to take the weight off your shoulders?</div>
+      </div>
+    </div>
+  <div class="hero" id="hero-section" style="opacity:0; pointer-events:none; transition: opacity 1.5s; z-index:10000;">
+    <video class="hero-bg-video" id="hero-video" preload="auto" muted playsinline style="opacity:0; transition: opacity 1.5s;">
+      <source src="library.mp4" type="video/mp4">
+      Your browser does not support the video tag or the video format.
+    </video>
+    <div class="branding" id="branding" style="opacity:0; pointer-events:none; transition: opacity 1.5s;">
+      <h1>DEVILLIER MEDIA</h1>
+      <p class="tagline">Where Curiosity Leads, Stories Follow</p>
+    </div>
+  </div>
+  <section class="services" id="services-section" style="opacity:0; pointer-events:none; transition: opacity 1.5s;">
+    <div class="service-row">
+      <div class="service-img left">
+        <img src="vhs.png" alt="A moody, close-up photo of a stack of VHS tapes or a glowing VCR.">
+      </div>
+      <div class="service-desc">
+        <h2>1. The Archive</h2>
+        <p class="service-tag">VHS to Digital</p>
+        <p><em>"Preserving the moments that time tried to erase."</em> We rescue your memories from the shelf. By converting your analog tapes to high-quality digital files via a professional capture card setup, we ensure your family history is protected, shareable, and ready for the modern screen.</p>
+        <div class="service-actions">
+          <button onclick="openModal('archive','details')">Details</button>
+          <button onclick="openModal('archive','pricing')">Pricing</button>
+          <button onclick="openModal('archive','booking')">Book a Call</button>
+          <button onclick="openModal('archive','gallery')">Gallery</button>
+        </div>
+      </div>
+    </div>
+    <div class="service-row">
+      <div class="service-img right">
+        <img src="floatingrock.png" alt="A floating rock for TTRPG world-building.">
+      </div>
+      <div class="service-desc">
+        <h2>2. The Foundation</h2>
+        <p class="service-tag">World-Building & TTRPG</p>
+        <p><em>"Architecting the realms of your imagination."</em> Whether you are a Game Master stuck on a campaign or a writer facing a blank page, we provide the structural spark your universe needs. From deep-lore World Bibles to cohesive One-Shot outlines, we build the bones so you can tell the story.</p>
+        <div class="service-actions">
+          <button onclick="openModal('foundation','details')">Details</button>
+          <button onclick="openModal('foundation','pricing')">Pricing</button>
+          <button onclick="openModal('foundation','booking')">Book a Call</button>
+          <button onclick="openModal('foundation','gallery')">Gallery</button>
+        </div>
+      </div>
+    </div>
+    <div class="service-row">
+      <div class="service-img left">
+        <img src="inkwellgoldfeather.png" alt="A quill and inkwell for lyric writing and poetry.">
+      </div>
+      <div class="service-desc">
+        <h2>3. The Rhythm</h2>
+        <p class="service-tag">Lyric Writing & Poetry</p>
+        <p><em>"Finding the words when only the melody exists."</em> Music tells a story, but lyrics give it a soul. If you have the vibe but lack the verses, we act as your collaborative partner to workshop metaphors, refine hooks, and ensure your message resonates with every beat.</p>
+        <div class="service-actions">
+          <button onclick="openModal('rhythm','details')">Details</button>
+          <button onclick="openModal('rhythm','pricing')">Pricing</button>
+          <button onclick="openModal('rhythm','booking')">Book a Call</button>
+          <button onclick="openModal('rhythm','gallery')">Gallery</button>
+        </div>
+      </div>
+    </div>
+    <div class="service-row">
+      <div class="service-img right">
+        <img src="camera.png" alt="A cinematic camera for narrative photography.">
+      </div>
+      <div class="service-desc">
+        <h2>4. The Lens</h2>
+        <p class="service-tag">Narrative Photography</p>
+        <p><em>"Candid moments, cinematically told."</em> We don’t just take pictures; we capture the atmosphere. Specializing in natural light and high-concept cinematic shoots, we curate an aesthetic that feels like a film still. Every package includes all photographer-approved photos, fully edited.</p>
+        <div class="service-actions">
+          <button onclick="openModal('lens','details')">Details</button>
+          <button onclick="openModal('lens','pricing')">Pricing</button>
+          <button onclick="openModal('lens','booking')">Book a Call</button>
+          <button onclick="openModal('lens','gallery')">Gallery</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Structure -->
+  <div id="service-modal" class="service-modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Service Data -->
+  <script>
+    // Animate service cards on scroll
+    function revealCards() {
+      const cards = document.querySelectorAll('.service-card');
+      const trigger = window.innerHeight * 0.92;
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < trigger) {
+          card.classList.add('visible');
+        }
+      });
+    }
+
+    const opener = document.getElementById('opener');
+    const heroSection = document.getElementById('hero-section');
+    const servicesSection = document.getElementById('services-section');
+    const video = document.getElementById('hero-video');
+    const branding = document.getElementById('branding');
+
+    // Hide hero and services initially
+    heroSection.style.opacity = 0;
+    heroSection.style.pointerEvents = 'none';
+    servicesSection.style.opacity = 0;
+    servicesSection.style.pointerEvents = 'none';
+    branding.style.opacity = 0;
+    branding.style.pointerEvents = 'none';
+    video.style.opacity = 0;
+
+    // Start loading video in background
+    video.load();
+
+    // Crossfade opener to video after 8s
+    setTimeout(() => {
+      opener.style.transition = 'opacity 1.5s';
+      opener.style.opacity = 0;
+      // Start video playback just before fade completes
+      setTimeout(() => {
+        opener.style.display = 'none';
+        heroSection.style.opacity = 1;
+        heroSection.style.pointerEvents = 'auto';
+        video.play();
+        // Fade in video element itself
+        setTimeout(() => {
+          video.style.opacity = 1;
+        }, 100);
+      }, 1500);
+    }, 8000);
+
+    // Branding crossfade in 7s after video starts
+    video.addEventListener('play', () => {
+      setTimeout(() => {
+        branding.style.opacity = 1;
+        branding.style.pointerEvents = 'auto';
+      }, 7000);
+    });
+
+    // Crossfade video to services after video ends
+    video.addEventListener('ended', () => {
+      heroSection.style.transition = 'opacity 1.5s';
+      heroSection.style.opacity = 0;
+      setTimeout(() => {
+        heroSection.style.display = 'none';
+        servicesSection.style.opacity = 1;
+        servicesSection.style.pointerEvents = 'auto';
+        revealCards();
+      }, 1500);
+    });
+
+    window.addEventListener('scroll', revealCards);
+    window.addEventListener('load', () => {
+      servicesSection.style.opacity = 0;
+      servicesSection.style.pointerEvents = 'none';
+      revealCards();
+    });
+
+    // Modal logic and service data
+    const serviceData = {
+      archive: {
+        details: `<h3>VHS to Digital Details</h3><p>We digitize VHS, VHS-C, and S-VHS tapes to MP4 files. Each tape is cleaned, inspected, and transferred with care. Output is delivered via secure download or USB drive.</p>`,
+        pricing: `<h3>Pricing</h3><ul><li>First tape: $40</li><li>Each additional: $30</li><li>Bulk discounts available</li></ul>`,
+        booking: `<h3>Book a Call</h3><p><a href="https://calendar.app.google/vJ2uwtB1bYeC6Qmp9" target="_blank">Schedule a 15-minute consultation</a></p>`,
+        gallery: `<h3>Portfolio</h3><div class='gallery'><img src="vhs_sample1.jpg"><img src="vhs_sample2.jpg"></div>`
+      },
+      foundation: {
+        details: `<h3>World-Building & TTRPG Details</h3><p>Building a world is about more than just a map; it’s about the "internal logic" that makes a story feel real. Our specialty is Stage Zero Architecture—taking the fragment of ideas you have and building a functional "Source of Truth" document (a World Bible). We identify the core conflict, the magic/tech systems, and the political factions that will drive your players or readers forward.</p><p><strong>The Blueprint:</strong> We organize lore into searchable, structured documents so you never lose track of a character's motivation or a city's history.</p><p><strong>Modular Lore:</strong> You can hire me to build a single "pillar" (like a custom religion or magic system) or an entire universe.</p>`,
+        pricing: `<h3>Pricing</h3>
+        <ul>
+          <li><strong>The Spark (Brainstorming):</strong> $30 / 30 mins</li>
+          <li><strong>One-Shot Outline:</strong> $60 <br>(Full narrative arc, NPCs, and encounter hooks).</li>
+          <li><strong>Lore Pillar:</strong> $100 <br>(A deep-dive section on one specific topic, e.g., a Magic System).</li>
+          <li><strong>The World Bible:</strong> Custom Quote Needed.</li>
+        </ul>` ,
+        booking: `<h3>Book a Call</h3><p><a href="https://calendar.app.google/vJ2uwtB1bYeC6Qmp9" target="_blank">Schedule a 15-minute consultation</a></p>`,
+        gallery: `<h3>Portfolio</h3><div class='gallery'><img src="ttrpg_sample1.jpg"><img src="ttrpg_sample2.jpg"></div>`
+      },
+      rhythm: {
+        details: `<h3>Lyric Writing & Poetry Details</h3><p>Music tells the story, but lyrics give it the soul. We act as your creative sounding board and co-writers. Whether you have a melody but no words, or a page of thoughts that won't fit a rhythm, we help find the meter, the rhyme, and the metaphor that makes your message resonate.</p><p><strong>The Spitball:</strong> We focus on the "Hook"—the most important line of your song—and build the theme around it.</p><p><strong>The Polish:</strong> We help turn "placeholder" lyrics into evocative poetry that fits the syllabic count of your track.</p>`,
+        pricing: `<h3>Pricing</h3><ul><li><strong>Lyric Spitballing:</strong> $30 / 30 mins <br>(Focus on hooks, themes, and vibes).</li><li><strong>Lyric Deep-Dive:</strong> $60 / 1 hr <br>(Full verse construction and polishing).</li><li><strong>Full Track Collaboration:</strong> Custom Quote Needed.</li></ul>`,
+        booking: `<h3>Book a Call</h3><p><a href="https://calendar.app.google/vJ2uwtB1bYeC6Qmp9" target="_blank">Schedule a 15-minute consultation</a></p>`,
+        gallery: `<h3>Portfolio</h3><div class='gallery'><img src="lyric_sample1.jpg"><img src="poetry_sample1.jpg"></div>`
+      },
+      lens: {
+        details: `<h3>Narrative Photography Details</h3><p>A photo session with Devillier Media is a collaboration, not just a service. We prioritize Natural Light because it provides an authenticity that studio lights often miss. We use movement-based prompts rather than stiff posing to ensure your photos feel like "film stills" from a story.</p><p><strong>The Prep Month:</strong> For Cinematic Concept shoots, we spend 30 days mood-boarding and prop hunting at local thrift stores to build a specific aesthetic for you to step into.</p><p><strong>Full Collection:</strong> We don't believe in holding your memories hostage behind a "per-photo" paywall.</p>`,
+        pricing: `<h3>Pricing</h3><ul><li><strong>Natural Light Session:</strong> $250 / 1 hr</li><li><strong>Cinematic Concept Shoot:</strong> $400 / 1 hr <br>(Includes 1-month prep + prop spree).</li><li><strong>Event Storytelling:</strong> $800 (4-hour base).</li></ul><p><strong>The Guarantee:</strong> All sessions include All Photographer-Approved Photos, including detail shots, and a mix between artistic edits and natural edits.</p>`,
+        booking: `<h3>Book a Call</h3><p><a href="https://calendar.app.google/vJ2uwtB1bYeC6Qmp9" target="_blank">Schedule a 15-minute consultation</a></p>`,
+        gallery: `<h3>Portfolio</h3><div class='gallery'><img src="photo_sample1.jpg"><img src="photo_sample2.jpg"></div>`
+      },
+      fineprint: {
+        details: `<h3>The Fine Print</h3><ul><li><strong>Creative Ownership & Intellectual Property:</strong> All Lore, World Bibles, Outlines, and Lyrics are 100% yours after final payment. Photography clients get personal use license; Devillier Media may use images for portfolio unless you opt out.</li><li><strong>Project Timing & Turnaround:</strong> Delivery times depend on project scope. Communicate deadlines early.</li><li><strong>Revisions & Edits:</strong> One major revision included for world-building/writing. Additional consulting available at standard rate.</li><li><strong>Cancellation & Refund Policy:</strong> 100% refund for cancellations 14+ days before, 50% for 8–13 days, non-refundable within 7 days. Prop Spree fee for concept shoots is non-refundable after prep starts.</li><li><strong>Flexibility:</strong> One free reschedule per booking, plus emergency reschedule for weather/crisis.</li><li><strong>The Archive:</strong> No charge for blank/unplayable tapes. Free redelivery within 30 days for corrupted files.</li></ul><p><a href='fineprint.html' target='_blank' style='color:#ffd700;text-decoration:underline;'>Read Full Fine Print</a></p>`
+      }
+    };
+
+    function openModal(service, type) {
+      const modal = document.getElementById('service-modal');
+      const body = document.getElementById('modal-body');
+      body.innerHTML = serviceData[service][type] || '<p>Content not found.</p>';
+      modal.style.display = 'flex'; // Use flex to center
+      modal.style.alignItems = 'center';
+      modal.style.justifyContent = 'center';
+    }
+    function closeModal() {
+      const modal = document.getElementById('service-modal');
+      modal.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
