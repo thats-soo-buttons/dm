@@ -8,7 +8,35 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="opener" class="opener-screen" style="opacity:1; z-index:10001;">
+    <!-- Menu Button -->
+    <button id="menu-btn" style="position:fixed;top:24px;right:32px;z-index:10010;font-size:1.2em;padding:8px 18px;border-radius:6px;background:#222;color:#ffd700;border:none;cursor:pointer;">Menu</button>
+
+    <!-- Menu Modal -->
+    <div id="menu-modal" class="service-modal" style="display:none;z-index:10011;">
+      <div class="modal-content" style="max-width:400px;text-align:center;">
+        <span class="close-modal" onclick="closeMenuModal()">&times;</span>
+        <h2>Menu</h2>
+        <ul style="list-style:none;padding:0;">
+          <li style="margin:18px 0;"><a href="fineprint.html" target="_blank" style="color:#222;text-decoration:underline;font-weight:bold;">Fine Print</a></li>
+          <li style="margin:18px 0;"><a href="portfolio-release-form.html" target="_blank" style="color:#222;text-decoration:underline;font-weight:bold;">Portfolio Release Form</a></li>
+          <li style="margin:18px 0;"><a href="#contact-form" onclick="openContactForm();return false;" style="color:#222;text-decoration:underline;font-weight:bold;">Contact Form</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact Form Modal -->
+    <div id="contact-modal" class="service-modal" style="display:none;z-index:10012;">
+      <div class="modal-content" style="max-width:400px;text-align:center;">
+        <span class="close-modal" onclick="closeContactModal()">&times;</span>
+        <h2>Contact Form</h2>
+        <form id="contact-form" action="mailto:your@email.com" method="POST" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your Name" required style="width:90%;margin:8px 0;padding:8px;"/><br/>
+          <input type="email" name="email" placeholder="Your Email" required style="width:90%;margin:8px 0;padding:8px;"/><br/>
+          <textarea name="message" placeholder="Your Message" required style="width:90%;margin:8px 0;padding:8px;min-height:80px;"></textarea><br/>
+          <button type="submit" style="background:#ffd700;color:#222;padding:8px 18px;border:none;border-radius:6px;cursor:pointer;">Send</button>
+        </form>
+      </div>
+    </div>
       <div class="opener-lines">
         <div>Our specialty is ideas.</div>
         <div>They come to us easily, so why not have an ideas team on your side to take the weight off your shoulders?</div>
@@ -101,6 +129,27 @@
 
   <!-- Service Data -->
   <script>
+        // Menu Modal Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const menuModal = document.getElementById('menu-modal');
+        const contactModal = document.getElementById('contact-modal');
+        menuBtn.onclick = function() {
+          menuModal.style.display = 'flex';
+          menuModal.style.alignItems = 'center';
+          menuModal.style.justifyContent = 'center';
+        };
+        function closeMenuModal() {
+          menuModal.style.display = 'none';
+        }
+        function openContactForm() {
+          menuModal.style.display = 'none';
+          contactModal.style.display = 'flex';
+          contactModal.style.alignItems = 'center';
+          contactModal.style.justifyContent = 'center';
+        }
+        function closeContactModal() {
+          contactModal.style.display = 'none';
+        }
     // Animate service cards on scroll
     function revealCards() {
       const cards = document.querySelectorAll('.service-card');

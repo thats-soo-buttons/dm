@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,3 +46,52 @@
   </div>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Release Form | Devillier Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background: #181818; color: #eaeaea; font-family: 'Montserrat', Arial, sans-serif; }
+    .release-container { max-width: 600px; margin: 3em auto; background: #232323; border-radius: 1em; box-shadow: 0 4px 32px #000b; padding: 2.5em 2em; }
+    h1, h2, h3 { color: #ffd700; }
+    label { display: block; margin: 1.2em 0 0.5em 0; font-weight: bold; }
+    input[type="text"] { width: 100%; padding: 0.6em; border-radius: 0.4em; border: none; background: #181818; color: #eaeaea; margin-bottom: 1em; }
+    .option-group { margin: 1.2em 0; }
+    .option-group label { font-weight: normal; display: flex; align-items: center; }
+    .option-group input[type="radio"] { margin-right: 0.7em; }
+    .signature-row { display: flex; gap: 1em; margin-top: 2em; }
+    .signature-row input[type="text"] { flex: 1; }
+    button { background: #ffd700; color: #181818; border: none; padding: 0.8em 2em; border-radius: 0.7em; font-size: 1.1em; cursor: pointer; margin-top: 2em; }
+    button:hover { background: #fff3; color: #ffd700; }
+  </style>
+</head>
+<body>
+  <div class="release-container">
+    <h1>Portfolio Release Form (Optional)</h1>
+    <form>
+      <label for="collaborator">Collaborator Name:</label>
+      <input type="text" id="collaborator" name="collaborator" autocomplete="name">
+      <label for="session-date">Date of Session:</label>
+      <input type="text" id="session-date" name="session-date" placeholder="MM/DD/YYYY" autocomplete="off">
+      <div class="option-group">
+        <label><input type="radio" name="release" value="full"> Full Release: You have my permission to use any photographer-approved images for your website, social media, and promotional materials.</label>
+        <label><input type="radio" name="release" value="selective"> Selective Release: I would like to review the images first. I will provide a list of specific "Approved Image Numbers" that may be used for your portfolio.</label>
+        <label><input type="radio" name="release" value="private"> Private Use Only: Please do not use my images for any public-facing portfolio or promotional materials.</label>
+      </div>
+      <label for="signature">Client Signature:</label>
+      <div class="signature-row">
+        <input type="text" id="signature" name="signature" autocomplete="off">
+        <input type="text" id="sign-date" name="sign-date" placeholder="Date" autocomplete="off">
+      </div>
+      <button type="submit" disabled>Submit (Print or Save as PDF)</button>
+    </form>
+    <p style="margin-top:2em;"><a href="index.html">Back to Home</a></p>
+  </div>
+</body>
+</html>
+>>>>>>> e37f48401a82498f0bce116057022c30d382055a
