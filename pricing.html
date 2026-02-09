@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Pricing | Devillier Media</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { background: #181818; color: #f5f5f5; font-family: 'Montserrat', Arial, sans-serif; }
+    .pricing-container { max-width: 900px; margin: 3em auto; background: #232323; border-radius: 1em; box-shadow: 0 4px 32px #000b; padding: 2.5em 2em; }
+    h1, h2, h3 { color: #ffd700; letter-spacing: 0.02em; }
+    h1 { color: #ffe066; }
+    h2 { color: #ffd700; }
+    h3 { color: #ffe066; }
+    ul { margin-left: 1.2em; }
+    li { margin-bottom: 1.2em; color: #f5f5f5; }
+    a { color: #7ecfff; text-decoration: underline; }
+    a:hover { color: #ffd700; background: #333; }
+    .dropdown-menu { margin-bottom: 2em; }
+    .dropdown-menu label { color: #eaeaea; }
+    .dropdown-menu select { font-size: 1.1em; padding: 0.5em 1em; border-radius: 6px; border: none; background: #222; color: #fff; }
+    .service-section { margin-bottom: 3em; }
+    .service-section h2 { margin-top: 0; }
+    .service-section p, .service-section ul { color: #eaeaea; }
+    .service-section span { color: #ffe066; }
+  </style>
+  <script>
+    function jumpToService() {
+      var val = document.getElementById('service-jump').value;
+      if(val) {
+        document.getElementById(val).scrollIntoView({behavior:'smooth'});
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="pricing-container">
+    <h1>Service Pricing</h1>
+    <div class="dropdown-menu">
+      <label for="service-jump">Jump to Service: </label>
+      <select id="service-jump" onchange="jumpToService()">
+        <option value="">Select a service...</option>
+        <option value="archive">The Archive (VHS to Digital)</option>
+        <option value="foundation">The Foundation (World-Building & TTRPG)</option>
+        <option value="rhythm">The Rhythm (Lyric Writing & Poetry)</option>
+        <option value="lens">The Lens (Narrative Photography)</option>
+      </select>
+    </div>
+    <div class="service-section" id="archive">
+      <h2>The Archive <span style="font-size:1rem; color:#ffd700;">(VHS to Digital)</span></h2>
+      <p><em>"Preserving the moments that time tried to erase."</em></p>
+      <ul>
+        <li><strong>Base Transfer:</strong> $6.00 per tape</li>
+        <li><strong>Remove dead space:</strong> +$5.00 per tape (optional)</li>
+        <li><strong>Label files by content:</strong> +$3.00 per tape (optional)</li>
+        <li><strong>Organize into TXT or spreadsheet:</strong> +$6.00 (one-time, optional)</li>
+        <li><strong>Delivery:</strong> Digital delivery (cloud or download) included</li>
+        <li><strong>Hard copy (USB or External Hard Drive):</strong> +$51.50</li>
+      </ul>
+      <p><strong>Turnaround Time:</strong> You have 30 days to transfer all your content.</p>
+      <p><strong>Cloud Storage Help:</strong> Want to keep your files in the cloud? I can set up your Google Drive and Plex account, or walk you through the process.</p>
+    </div>
+    <div class="service-section" id="foundation">
+      <h2>The Foundation <span style="font-size:1rem; color:#ffd700;">(World-Building & TTRPG)</span></h2>
+      <p><em>"Architecting the realms of your imagination."</em></p>
+      <ul>
+        <li><strong>The Spark (Brainstorming):</strong> $30.50 / 30 mins</li>
+        <li><strong>One-Shot Outline:</strong> $61.50 <br>(Full narrative arc, NPCs, and encounter hooks).</li>
+        <li><strong>Lore Pillar:</strong> $104.00 <br>(A deep-dive section on one specific topic, e.g., a Magic System).</li>
+        <li><strong>The World Bible:</strong> Custom Quote Needed.</li>
+      </ul>
+      <p><strong>Details:</strong> We build a functional "Source of Truth" document (World Bible), organize lore into searchable, structured documents, and offer modular lore building for single pillars or entire universes.</p>
+    </div>
+    <div class="service-section" id="rhythm">
+      <h2>The Rhythm <span style="font-size:1rem; color:#ffd700;">(Lyric Writing & Poetry)</span></h2>
+      <p><em>"Finding the words when only the melody exists."</em></p>
+      <ul>
+        <li><strong>Lyric Spitballing:</strong> $30.50 / 30 mins <br>(Focus on hooks, themes, and vibes).</li>
+        <li><strong>Lyric Deep-Dive:</strong> $61.50 / 1 hr <br>(Full verse construction and polishing).</li>
+        <li><strong>Full Track Collaboration:</strong> Custom Quote Needed.</li>
+      </ul>
+      <p><strong>Details:</strong> We help find the meter, rhyme, and metaphor that makes your message resonate. We focus on the "Hook" and polish lyrics to fit your track.</p>
+    </div>
+    <div class="service-section" id="lens">
+      <h2>The Lens <span style="font-size:1rem; color:#ffd700;">(Narrative Photography)</span></h2>
+      <p><em>"Candid moments, cinematically told."</em></p>
+      <ul>
+        <li><strong>Natural Light Session:</strong> $258.00 / 1 hr</li>
+        <li><strong>Cinematic Concept Shoot:</strong> $412.50 / 1 hr <br>(Includes 1-month prep + prop spree).</li>
+        <li><strong>Event Storytelling:</strong> $825.00 (4-hour base).</li>
+      </ul>
+      <p><strong>Details:</strong> All sessions include all photographer-approved photos, a mix of artistic and natural edits, and a collaborative, cinematic approach.</p>
+    </div>
+    <p style="margin-top:2em;"><a href="index.html">Back to Home</a></p>
+  </div>
+</body>
+</html>

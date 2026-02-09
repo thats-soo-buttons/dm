@@ -1,4 +1,15 @@
-/* Opener styles */
+#menu-modal h2 {
+	color: #ffd700 !important;
+}
+#menu-modal a {
+	color: #fff !important;
+	text-decoration: underline;
+	font-weight: bold;
+	opacity: 1 !important;
+}
+#menu-modal a:hover {
+	color: #ffd700 !important;
+}
 #opener.opener-screen {
 	position: fixed;
 	z-index: 10000;
