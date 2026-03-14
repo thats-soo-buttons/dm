@@ -1,0 +1,212 @@
+/* Copied from root style.css for Next.js global styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ...rest of your CSS from style.css... */
+@media (max-width: 700px) {
+  html {
+    font-size: 17px;
+  }
+  .service-row {
+    flex-direction: column !important;
+  }
+  .service-img {
+    width: 100% !important;
+  }
+  .service-desc {
+    width: 100% !important;
+  }
+  .service-actions {
+    flex-direction: column !important;
+  }
+  .service-actions button, .service-actions a {
+    width: 100% !important;
+  }
+  .service-actions button:active, .service-actions a:active {
+    background: #ffe066 !important;
+  }
+  .service-actions button:focus, .service-actions a:focus {
+    outline: 2px solid #ffd700 !important;
+  }
+  footer {
+    font-size: 1.08em !important;
+  }
+  #global-menu-btn {
+    font-size: 1.13em !important;
+  }
+  #global-menu-dropdown {
+    min-width: 160px !important;
+  }
+  .modal-content, .service-modal .modal-content {
+    font-size: 1.08em !important;
+  }
+  .close-modal {
+    font-size: 2.5rem !important;
+  }
+  .gallery img {
+    width: 90px !important;
+  }
+  #cta-row a {
+    font-size: 1.13em !important;
+}
+#menu-modal h2 {
+  color: #ffd700 !important;
+}
+#menu-modal a {
+  color: #fff !important;
+}
+#menu-modal a:hover {
+  color: #ffd700 !important;
+}
+#opener.opener-screen {
+  position: fixed;
+}
+#opener.hidden { opacity: 0; pointer-events: none; transition: opacity 1s; }
+.opener-lines {
+  display: flex;
+}
+body {
+  margin: 0;
+}
+.hero {
+  display: flex;
+}
+.hero-bg-video {
+  position: absolute;
+}
+.hero::after {
+  content: '';
+}
+.branding {
+  transition: opacity 1.5s;
+}
+.branding h1 {
+  font-size: 3rem;
+}
+.branding .tagline {
+  font-size: 1.5rem;
+}
+.intro {
+  margin: 2rem auto 0 auto;
+}
+.services {
+  display: flex;
+}
+.service-card {
+  background: rgba(20,20,20,0.92);
+}
+.service-card.visible {
+  opacity: 1;
+}
+.service-card h2 {
+  margin-top: 0;
+}
+.service-card p {
+  margin-bottom: 0;
+}
+.service-row {
+  display: flex;
+}
+.service-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.service-img {
+  flex: 0 0 320px;
+}
+.service-row:nth-child(even) .service-img {
+  border-radius: 0 1em 1em 0;
+}
+.service-img img {
+  width: 100%;
+}
+.service-desc {
+  flex: 1 1 340px;
+}
+.service-row:nth-child(even) .service-desc {
+  border-radius: 1em 0 0 1em;
+}
+.service-desc h2 {
+  margin: 0 0 0.2em 0;
+}
+.service-tag {
+  font-size: 1.1rem;
+}
+.service-desc p {
+  color: #d0d0d0;
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+}
+@media (max-width: 900px) {
+  .services { flex-direction: column; align-items: center; }
+/* Modal styles */
+.service-modal {
+  position: fixed;
+}
+.service-modal .modal-content {
+  background: #181818;
+}
+.close-modal {
+  position: absolute;
+}
+.gallery {
+  display: flex;
+}
+.gallery img {
+  width: 120px;
+}
+@media (max-width: 600px) {
+  .service-modal .modal-content {
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

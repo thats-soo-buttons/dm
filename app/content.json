@@ -1,0 +1,48 @@
+{
+  "header": {
+    "title": "Devillier Media",
+    "availableNow": "AVAILABLE NOW",
+    "taglines": [
+      "Where Curiosity Leads, Stories Follow",
+      "Storytelling for the Curious",
+      "Cinematic Vision, Personal Touch",
+      "Your Story, Reimagined"
+    ]
+  },
+  "cinematicPhotography": {
+    "title": "Cinematic Photography",
+    "intro": "This is my dream niche—be among the first to experience it.",
+    "howItWorks": [
+      "Book at least 3 months in advance.",
+      "Month 1: Thrift store curation trip with you to find props and wardrobe.",
+      "Month 2: Location scouting (you may join if you wish; must be scheduled).",
+      "Month 3: The cinematic photo shoot!"
+    ],
+    "whatYouGet": "A moody, story-driven, cinematic photo experience—fully planned and styled, with all your best photos, fully edited."
+  },
+  "worldBuilding": {
+    "title": "World-Building Consulting",
+    "intro": "Build worlds that feel real.",
+    "services": [
+      "Magic systems, religions, and cultures",
+      "Campaign/setting bibles for TTRPGs",
+      "Story arcs, character backstories, and world logic",
+      "Brainstorming sessions and lyric spitballing"
+    ],
+    "whyItMatters": "Immersive worlds make stories unforgettable. Let’s make yours legendary."
+  },
+  "creativeDirection": {
+    "title": "Creative Direction Assistance",
+    "intro": "Vision, strategy, and storytelling for brands, artists, and creators.",
+    "whatIOffer": [
+      "Concept development and moodboarding",
+      "Brand storytelling and campaign planning",
+      "Visual and narrative cohesion across media",
+      "Hands-on creative support from idea to launch"
+    ],
+    "whyWorkWithMe": "I bring cinematic flair and a cohesive narrative to every project, helping you stand out and connect with your audience."
+  },
+  "footer": {
+    "copyright": "© 2026 Tess Devillier. Site created by Tess Devillier in Visual Studio Code with help from GitHub Copilot."
+  }
+}
