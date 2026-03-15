@@ -6,7 +6,7 @@ const menuLinks = [
   { label: "TessDevillier.com", url: "https://www.tessdevillier.com" },
   { label: "Thatssoobuttons.com", url: "https://thatssoobuttons.com" },
   { label: "OnTheFlyNetwork.com", url: "https://ontheflynetwork.com" },
-  { label: "Gallery", url: "/galleries" },
+  { label: "Gallery", url: "https://galleries.devilliermedia.com" },
 ];
 
 export default function MenuDropdown() {
