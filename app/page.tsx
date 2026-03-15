@@ -27,14 +27,11 @@ export default function Home() {
     return () => clearTimeout(openerTimer);
   }, []);
 
-  // Branding: fade in 7s after video starts
+  // Branding: show after video ends
   useEffect(() => {
-    let brandingTimer: NodeJS.Timeout;
     if (showHero && videoRef.current) {
       videoRef.current.play();
-      brandingTimer = setTimeout(() => setShowBranding(true), 7000);
     }
-    return () => clearTimeout(brandingTimer);
   }, [showHero]);
 
   // After video ends, redirect to /services
@@ -42,6 +39,7 @@ export default function Home() {
     const video = videoRef.current;
     if (!video) return;
     const handleEnded = () => {
+      setShowBranding(true);
       window.location.href = "/services";
     };
     video.addEventListener("ended", handleEnded);
