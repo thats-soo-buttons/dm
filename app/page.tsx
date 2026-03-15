@@ -48,36 +48,36 @@ export default function Home() {
   }, [showHero]);
 
   return (
-        {showBanner && showBranding && (
-          <div style={{
-            width: "100vw",
-            background: "#ffd700",
-            color: "#181c1f",
-            textAlign: "center",
-            fontWeight: 600,
-            fontSize: "1.15em",
-            padding: "14px 0",
-            boxShadow: "0 2px 8px #0002",
-            position: "fixed",
-            top: 0,
-            left: 0,
-            zIndex: 9999,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "12px",
-          }}>
-            <span style={{ fontSize: "1.5em" }}>🍀</span>
-            <span style={{ fontWeight: 700 }}>
-              WEARING OF THE GREEN PHOTOS AVAILABLE SOON -
-              <a href="https://galleries.devilliermedia.com" target="_blank" rel="noopener noreferrer" style={{ color: "#181c1f", textDecoration: "underline", fontWeight: 700, marginLeft: "8px" }}>
-                HERE
-              </a>
-            </span>
-          </div>
-        )}
-        {showBranding && <MenuDropdown />}
     <main style={{ minHeight: "100vh", width: "100vw", overflow: "hidden", background: "linear-gradient(120deg, #111 80%, #232323 100%)" }}>
+      {showBanner && showBranding && (
+        <div style={{
+          width: "100vw",
+          background: "#ffd700",
+          color: "#181c1f",
+          textAlign: "center",
+          fontWeight: 600,
+          fontSize: "1.15em",
+          padding: "14px 0",
+          boxShadow: "0 2px 8px #0002",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          zIndex: 9999,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "12px",
+        }}>
+          <span style={{ fontSize: "1.5em" }}>🍀</span>
+          <span style={{ fontWeight: 700 }}>
+            WEARING OF THE GREEN PHOTOS AVAILABLE SOON -
+            <a href="https://galleries.devilliermedia.com" target="_blank" rel="noopener noreferrer" style={{ color: "#181c1f", textDecoration: "underline", fontWeight: 700, marginLeft: "8px" }}>
+              HERE
+            </a>
+          </span>
+        </div>
+      )}
+      {showBranding && <MenuDropdown />}
       {/* Opener Splash */}
       <section
         className={styles.openerScreen}
