@@ -1,10 +1,10 @@
+"use client";
 // Type declaration for window.openContactForm
 declare global {
   interface Window {
     openContactForm?: () => void;
   }
 }
-"use client";
 import { useEffect, useRef, useState } from "react";
 import MenuDropdown from "../components/MenuDropdown";
 import content from "../content.json";
