@@ -88,8 +88,8 @@ export default function MenuDropdown() {
           ))}
           <button
             onClick={() => {
-              if (typeof window !== "undefined" && window.openContactForm) {
-                window.openContactForm();
+              if (typeof window !== "undefined" && (window as any).openContactForm) {
+                (window as any).openContactForm();
               }
             }}
             style={{
