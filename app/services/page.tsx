@@ -1,3 +1,9 @@
+// Type declaration for window.openContactForm
+declare global {
+  interface Window {
+    openContactForm?: () => void;
+  }
+}
 "use client";
 import { useEffect, useRef, useState } from "react";
 import MenuDropdown from "../components/MenuDropdown";
@@ -42,7 +48,7 @@ const inputStyle = {
 };
 
 // Move type declarations after imports for .tsx compatibility
-type ServiceKey = "archive" | "foundation" | "rhythm" | "lens";
+type ServiceKey = "cinematicPhotography" | "worldBuilding" | "creativeDirection";
 type ModalType = "details" | "pricing" | "booking" | "gallery";
 
 
@@ -54,7 +60,7 @@ export default function ServicesPage() {
       const taglines = content.header.taglines;
       const [taglineIdx, setTaglineIdx] = useState(0); // Always starts at 0
       const [showTagline, setShowTagline] = useState(true);
-      const taglineTimeout = useRef(null);
+      const taglineTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
       useEffect(() => {
         taglineTimeout.current = setTimeout(() => {
@@ -64,11 +70,15 @@ export default function ServicesPage() {
             setShowTagline(true);
           }, 400);
         }, 3200);
-        return () => clearTimeout(taglineTimeout.current);
+        return () => {
+          if (taglineTimeout.current !== null) {
+            clearTimeout(taglineTimeout.current);
+          }
+        };
       }, [taglineIdx, showTagline]);
 
       // Devil glow effect: glow for 1.2s, then normal
-      const devilRef = useRef(null);
+      const devilRef = useRef<HTMLElement | null>(null);
       useEffect(() => {
         const devil = devilRef.current;
         if (!devil) return;
@@ -83,7 +93,7 @@ export default function ServicesPage() {
     const closeModal = () => setModal({ open: false, service: null, type: null });
   // Modal state for 'Other Photography Services'
   const [photoModalOpen, setPhotoModalOpen] = React.useState(false);
-  const openPhotoModal = (e) => {
+  const openPhotoModal = (e: React.SyntheticEvent) => {
     if (e) e.preventDefault();
     setPhotoModalOpen(true);
   };
@@ -289,8 +299,8 @@ export default function ServicesPage() {
           <div className="service-modal" style={{ display: "flex", alignItems: "center", justifyContent: "center", zIndex: 10012, position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", background: "rgba(0,0,0,0.5)" }}>
             <div className="modal-content" style={{ maxWidth: 400, textAlign: "center", background: "#fff", borderRadius: 12, padding: 24, position: "relative" }}>
               <span className="close-modal" onClick={closeModal} style={{ position: "absolute", top: 12, right: 18, fontSize: 28, cursor: "pointer" }}>&times;</span>
-              {modal.service in serviceContent && modal.type in serviceContent[modal.service as ServiceKey]
-                ? serviceContent[modal.service as ServiceKey][modal.type]
+              {modal.service in content && modal.type in (content[modal.service as ServiceKey] || {})
+                ? (content[modal.service as ServiceKey] as any)[modal.type]
                 : <p>Content not found.</p>}
             </div>
           </div>
