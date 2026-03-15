@@ -57,7 +57,12 @@ export default function ServicesPage() {
         const [hasMounted, setHasMounted] = useState(false);
         useEffect(() => { setHasMounted(true); }, []);
       // Rotating tagline logic (from content.json)
-      const taglines = content.header.taglines;
+      const taglines = [
+        "Cinematic Vision. Personal Touch",
+        "Photography",
+        "World Building",
+        "Consulting"
+      ];
       const [taglineIdx, setTaglineIdx] = useState(0); // Always starts at 0
       const [showTagline, setShowTagline] = useState(true);
       const taglineTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -113,8 +118,35 @@ export default function ServicesPage() {
   }, []);
   return (
     <>
+      {/* Wearing of the Green Announcement Banner */}
+      <div style={{
+        width: "100vw",
+        background: "#ffd700",
+        color: "#181c1f",
+        textAlign: "center",
+        fontWeight: 600,
+        fontSize: "1.15em",
+        padding: "14px 0",
+        boxShadow: "0 2px 8px #0002",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        zIndex: 9999,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "12px",
+      }}>
+        <span style={{ fontSize: "1.5em" }}>🍀</span>
+        <span style={{ fontWeight: 700 }}>
+          WEARING OF THE GREEN PHOTOS AVAILABLE SOON -
+          <a href="https://galleries.devilliermedia.com" target="_blank" rel="noopener noreferrer" style={{ color: "#181c1f", textDecoration: "underline", fontWeight: 700, marginLeft: "8px" }}>
+            HERE
+          </a>
+        </span>
+      </div>
       {showMenu && <MenuDropdown />}
-      <main style={{ background: "#101014", minHeight: "100vh", color: "#ece6d6", fontFamily: "'Montserrat', sans-serif" }}>
+      <main style={{ background: "#101014", minHeight: "100vh", color: "#ece6d6", fontFamily: "'Montserrat', sans-serif", paddingTop: 60 }}>
         {/* Cinematic Banner */}
         <section style={{ position: "relative", width: "100%", minHeight: 340, background: "#18191c", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
           <img src="/photos/imported/Clouds1Edit2.jpg" alt="Banner background" style={{ width: "100%", height: 340, objectFit: "cover", filter: "grayscale(0.1) brightness(0.7)", position: "absolute", top: 0, left: 0, zIndex: 1 }} />
