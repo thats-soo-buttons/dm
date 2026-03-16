@@ -6,6 +6,26 @@ import MenuDropdown from "./components/MenuDropdown";
 
 
 export default function Home() {
+      // Opener quotes
+      const openerQuotes = [
+        {
+          text: "There is no greater agony than bearing an untold story inside you.",
+          author: "Maya Angelou"
+        },
+        {
+          text: "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution.",
+          author: "Albert Einstein"
+        }
+      ];
+      const [openerIdx, setOpenerIdx] = useState(0);
+      useEffect(() => {
+        if (showOpener) {
+          const quoteTimer = setTimeout(() => {
+            setOpenerIdx((i) => (i + 1) % openerQuotes.length);
+          }, 4000); // Change quote every 4s
+          return () => clearTimeout(quoteTimer);
+        }
+      }, [showOpener, openerIdx]);
     // Banner visibility logic
     const [showBanner, setShowBanner] = useState(true);
     useEffect(() => {
@@ -33,10 +53,10 @@ export default function Home() {
   useEffect(() => {
     if (showHero && videoRef.current) {
       videoRef.current.play();
-      // Show branding text after 5.5s
-      const brandingTimer = setTimeout(() => setShowBrandingText(true), 5500);
-      // Show tagline after 6s
-      const taglineTimer = setTimeout(() => setShowTagline(true), 6000);
+      // Show branding text after 6.5s (1s later)
+      const brandingTimer = setTimeout(() => setShowBrandingText(true), 6500);
+      // Show tagline after 8s (2s later)
+      const taglineTimer = setTimeout(() => setShowTagline(true), 8000);
       return () => {
         clearTimeout(brandingTimer);
         clearTimeout(taglineTimer);
@@ -77,8 +97,12 @@ export default function Home() {
         aria-label="Introductory Message"
       >
         <div className={styles.openerLines}>
-          <div>Our specialty is ideas.</div>
-          <div>They come to us easily, so why not have an ideas team on your side to take the weight off your shoulders?</div>
+          <div style={{ fontStyle: "italic", fontSize: "1.25em", color: "#fffbe6" }}>
+            "{openerQuotes[openerIdx].text}"
+          </div>
+          <div style={{ marginTop: 12, color: "#ffd700", fontSize: "1em" }}>
+            — {openerQuotes[openerIdx].author}
+          </div>
         </div>
       </section>
 
