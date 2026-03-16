@@ -7,6 +7,7 @@ const menuLinks = [
   { label: "Thatssoobuttons.com", url: "https://thatssoobuttons.com" },
   { label: "OnTheFlyNetwork.com", url: "https://ontheflynetwork.com" },
   { label: "Gallery", url: "https://galleries.devilliermedia.com" },
+  { label: "Portfolio", url: "/portfolio" },
 ];
 
 export default function MenuDropdown() {

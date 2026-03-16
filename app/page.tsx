@@ -15,6 +15,7 @@ export default function Home() {
     }, []);
   const [showOpener, setShowOpener] = useState(true);
   const [showHero, setShowHero] = useState(false);
+  const [showBrandingText, setShowBrandingText] = useState(false);
   const [showTagline, setShowTagline] = useState(false);
   const [showBranding, setShowBranding] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -32,9 +33,14 @@ export default function Home() {
   useEffect(() => {
     if (showHero && videoRef.current) {
       videoRef.current.play();
-      // Show tagline after 4.5s
-      const taglineTimer = setTimeout(() => setShowTagline(true), 4500);
-      return () => clearTimeout(taglineTimer);
+      // Show branding text after 5.5s
+      const brandingTimer = setTimeout(() => setShowBrandingText(true), 5500);
+      // Show tagline after 6s
+      const taglineTimer = setTimeout(() => setShowTagline(true), 6000);
+      return () => {
+        clearTimeout(brandingTimer);
+        clearTimeout(taglineTimer);
+      };
     }
   }, [showHero]);
 
@@ -52,7 +58,7 @@ export default function Home() {
 
   return (
     <main style={{ minHeight: "100vh", width: "100vw", overflow: "hidden", background: "linear-gradient(120deg, #111 80%, #232323 100%)" }}>
-      {/* MenuDropdown removed from homepage. It will appear only on /services. */}
+      {/* MenuDropdown is not rendered on homepage. It will appear only on /services. */}
       {/* Opener Splash */}
       <section
         className={styles.openerScreen}
@@ -133,7 +139,9 @@ export default function Home() {
             }}
             id="branding"
           >
-            <h1 style={{ fontSize: "3rem", letterSpacing: "0.1em", margin: 0, color: "#fffbe6", textShadow: "0 0 8px #000, 0 0 24px #000, 2px 2px 24px #000, 0 0 12px #fff1", filter: "drop-shadow(0 0 12px #000)" }}>Devillier Media</h1>
+            {showBrandingText && (
+              <h1 style={{ fontSize: "3rem", letterSpacing: "0.1em", margin: 0, color: "#fffbe6", textShadow: "0 0 8px #000, 0 0 24px #000, 2px 2px 24px #000, 0 0 12px #fff1", filter: "drop-shadow(0 0 12px #000)" }}>Devillier Media</h1>
+            )}
             {showTagline && (
               <div style={{ fontSize: "1.3em", color: "#ffd700", marginTop: 18, textShadow: "0 2px 8px #000a", fontStyle: "italic", transition: "opacity 1.5s" }}>
                 “Where Curiosity Leads, Stories Follow”
