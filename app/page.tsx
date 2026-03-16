@@ -26,19 +26,19 @@ export default function Home() {
           return () => clearTimeout(quoteTimer);
         }
       }, [showOpener, openerIdx]);
-    // Banner visibility logic
-    const [showBanner, setShowBanner] = useState(true);
-    useEffect(() => {
-      const now = new Date();
-      const hideDate = new Date('2026-04-15T00:00:00');
-      if (now >= hideDate) setShowBanner(false);
-    }, []);
-  const [showOpener, setShowOpener] = useState(true);
-  const [showHero, setShowHero] = useState(false);
-  const [showBrandingText, setShowBrandingText] = useState(false);
-  const [showTagline, setShowTagline] = useState(false);
-  const [showBranding, setShowBranding] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+      // Banner visibility logic
+      const [showOpener, setShowOpener] = useState(true);
+      const [showBanner, setShowBanner] = useState(true);
+      useEffect(() => {
+        const now = new Date();
+        const hideDate = new Date('2026-04-15T00:00:00');
+        if (now >= hideDate) setShowBanner(false);
+      }, []);
+      const [showHero, setShowHero] = useState(false);
+      const [showBrandingText, setShowBrandingText] = useState(false);
+      const [showTagline, setShowTagline] = useState(false);
+      const [showBranding, setShowBranding] = useState(false);
+      const videoRef = useRef<HTMLVideoElement>(null);
 
   // Opener: show for 8s, then fade out and show hero
   useEffect(() => {
