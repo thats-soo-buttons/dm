@@ -15,6 +15,7 @@ export default function Home() {
     }, []);
   const [showOpener, setShowOpener] = useState(true);
   const [showHero, setShowHero] = useState(false);
+  const [showTagline, setShowTagline] = useState(false);
   const [showBranding, setShowBranding] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -31,6 +32,9 @@ export default function Home() {
   useEffect(() => {
     if (showHero && videoRef.current) {
       videoRef.current.play();
+      // Show tagline after 4.5s
+      const taglineTimer = setTimeout(() => setShowTagline(true), 4500);
+      return () => clearTimeout(taglineTimer);
     }
   }, [showHero]);
 
@@ -130,9 +134,11 @@ export default function Home() {
             id="branding"
           >
             <h1 style={{ fontSize: "3rem", letterSpacing: "0.1em", margin: 0, color: "#fffbe6", textShadow: "0 0 8px #000, 0 0 24px #000, 2px 2px 24px #000, 0 0 12px #fff1", filter: "drop-shadow(0 0 12px #000)" }}>Devillier Media</h1>
-            <div style={{ fontSize: "1.3em", color: "#ffd700", marginTop: 18, textShadow: "0 2px 8px #000a", fontStyle: "italic" }}>
-              “Where Curiosity Leads, Stories Follow”
-            </div>
+            {showTagline && (
+              <div style={{ fontSize: "1.3em", color: "#ffd700", marginTop: 18, textShadow: "0 2px 8px #000a", fontStyle: "italic", transition: "opacity 1.5s" }}>
+                “Where Curiosity Leads, Stories Follow”
+              </div>
+            )}
           </div>
         )}
       </section>
