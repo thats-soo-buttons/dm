@@ -52,7 +52,7 @@ export default function Home() {
 
   return (
     <main style={{ minHeight: "100vh", width: "100vw", overflow: "hidden", background: "linear-gradient(120deg, #111 80%, #232323 100%)" }}>
-      {showBranding && <MenuDropdown />}
+      {/* MenuDropdown removed from homepage. It will appear only on /services. */}
       {/* Opener Splash */}
       <section
         className={styles.openerScreen}
