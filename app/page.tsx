@@ -6,39 +6,41 @@ import MenuDropdown from "./components/MenuDropdown";
 
 
 export default function Home() {
-      // Opener quotes
-      const openerQuotes = [
-        {
-          text: "There is no greater agony than bearing an untold story inside you.",
-          author: "Maya Angelou"
-        },
-        {
-          text: "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution.",
-          author: "Albert Einstein"
-        }
-      ];
-      const [openerIdx, setOpenerIdx] = useState(0);
-      useEffect(() => {
-        if (showOpener) {
-          const quoteTimer = setTimeout(() => {
-            setOpenerIdx((i) => (i + 1) % openerQuotes.length);
-          }, 4000); // Change quote every 4s
-          return () => clearTimeout(quoteTimer);
-        }
-      }, [showOpener, openerIdx]);
-      // Banner visibility logic
-      const [showOpener, setShowOpener] = useState(true);
-      const [showBanner, setShowBanner] = useState(true);
-      useEffect(() => {
-        const now = new Date();
-        const hideDate = new Date('2026-04-15T00:00:00');
-        if (now >= hideDate) setShowBanner(false);
-      }, []);
-      const [showHero, setShowHero] = useState(false);
-      const [showBrandingText, setShowBrandingText] = useState(false);
-      const [showTagline, setShowTagline] = useState(false);
-      const [showBranding, setShowBranding] = useState(false);
-      const videoRef = useRef<HTMLVideoElement>(null);
+  // State variables (must be declared first)
+  const [showOpener, setShowOpener] = useState(true);
+  const [showBanner, setShowBanner] = useState(true);
+  const [showHero, setShowHero] = useState(false);
+  const [showBrandingText, setShowBrandingText] = useState(false);
+  const [showTagline, setShowTagline] = useState(false);
+  const [showBranding, setShowBranding] = useState(false);
+  const [openerIdx, setOpenerIdx] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  // Opener quotes
+  const openerQuotes = [
+    {
+      text: "There is no greater agony than bearing an untold story inside you.",
+      author: "Maya Angelou"
+    },
+    {
+      text: "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution.",
+      author: "Albert Einstein"
+    }
+  ];
+  useEffect(() => {
+    if (showOpener) {
+      const quoteTimer = setTimeout(() => {
+        setOpenerIdx((i) => (i + 1) % openerQuotes.length);
+      }, 4000); // Change quote every 4s
+      return () => clearTimeout(quoteTimer);
+    }
+  }, [showOpener, openerIdx]);
+  // Banner visibility logic
+  useEffect(() => {
+    const now = new Date();
+    const hideDate = new Date('2026-04-15T00:00:00');
+    if (now >= hideDate) setShowBanner(false);
+  }, []);
 
   // Opener: show for 8s, then fade out and show hero
   useEffect(() => {
