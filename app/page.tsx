@@ -31,7 +31,7 @@ export default function Home() {
     if (showOpener) {
       const quoteTimer = setTimeout(() => {
         setOpenerIdx((i) => (i + 1) % openerQuotes.length);
-      }, 4000); // Change quote every 4s
+      }, openerIdx === 1 ? 6000 : 4000); // Einstein: 6s, Angelou: 4s
       return () => clearTimeout(quoteTimer);
     }
   }, [showOpener, openerIdx]);
