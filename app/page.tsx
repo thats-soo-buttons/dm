@@ -72,7 +72,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hero Section with Video */}
+      {/* Hero Section with Video and Branding Overlay */}
       <section
         className={styles.hero}
         style={{
@@ -113,25 +113,28 @@ export default function Home() {
         >
           Your browser does not support the video tag or the video format.
         </video>
-        <div
-          className={styles.branding}
-          style={{
-            opacity: showBranding ? 1 : 0,
-            pointerEvents: showBranding ? "auto" : "none",
-            transition: "opacity 1.5s",
-            zIndex: 2,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-          id="branding"
-        >
-          <h1 style={{ fontSize: "3rem", letterSpacing: "0.1em", margin: 0, color: "#fffbe6", textShadow: "0 0 8px #000, 0 0 24px #000, 2px 2px 24px #000, 0 0 12px #fff1", filter: "drop-shadow(0 0 12px #000)" }}>Devillier Media</h1>
-          <div style={{ fontSize: "1.3em", color: "#ffd700", marginTop: 18, textShadow: "0 2px 8px #000a", fontStyle: "italic" }}>
-            “Where Curiosity Leads, Stories Follow”
+        {/* Branding overlay always visible during video playback */}
+        {showHero && (
+          <div
+            className={styles.branding}
+            style={{
+              opacity: 1,
+              pointerEvents: "auto",
+              transition: "opacity 1.5s",
+              zIndex: 2,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            id="branding"
+          >
+            <h1 style={{ fontSize: "3rem", letterSpacing: "0.1em", margin: 0, color: "#fffbe6", textShadow: "0 0 8px #000, 0 0 24px #000, 2px 2px 24px #000, 0 0 12px #fff1", filter: "drop-shadow(0 0 12px #000)" }}>Devillier Media</h1>
+            <div style={{ fontSize: "1.3em", color: "#ffd700", marginTop: 18, textShadow: "0 2px 8px #000a", fontStyle: "italic" }}>
+              “Where Curiosity Leads, Stories Follow”
+            </div>
           </div>
-        </div>
+        )}
       </section>
     </main>
   );
