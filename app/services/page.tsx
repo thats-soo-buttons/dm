@@ -53,6 +53,13 @@ type ModalType = "details" | "pricing" | "booking" | "gallery";
 
 
 export default function ServicesPage() {
+          // Render MenuDropdown only on /services page
+          return (
+            <>
+              <MenuDropdown />
+              {/* ...existing code... */}
+            </>
+          );
         // Prevent hydration mismatch: only render animated header after mount
         const [hasMounted, setHasMounted] = useState(false);
         useEffect(() => { setHasMounted(true); }, []);
