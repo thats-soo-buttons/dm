@@ -28,6 +28,7 @@ const footerLinkStyleIcon = {
   verticalAlign: "middle",
 };
 import React from "react";
+import MiniGalleryCarousel from "../components/MiniGalleryCarousel";
 // Inline styles for menu and footer links
 const menuLinkStyle = {
   display: "block",
@@ -368,7 +369,7 @@ export default function ServicesPage() {
               <a href="https://twitch.tv/thats_soo_buttons" target="_blank" title="Twitch" style={footerLinkStyleIcon}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ verticalAlign: "middle" }}><path d="M4 2l-2 4v14h6v2h4v-2h4l4-4V2H4zm16 12l-2 2h-4v2h-2v-2H6V4h14v10z" stroke="#ffd700" strokeWidth="2" fill="none"/></svg>
               </a>
-              <a href="https://ko-fi.com/thatssoobuttons/shop" target="_blank" title="Shop" style={{ background: "#ffd700", color: "#222", fontWeight: "bold", padding: "6px 18px", borderRadius: 8, marginLeft: 12, textDecoration: "none", transition: "background 0.2s" }}>SHOP</a>
+              <a href="https://ko-fi.com/thatssoobuttons/shop" target="_blank" title="Shop" style={{ background: "#ffd700", color: "#222", fontWeight: "bold", padding: "6px 18px", borderRadius: 8, marginLeft: 12, textDecoration: "none", transition: "background 0.2s, color 0.2s" }}>SHOP</a>
               <button
                 onClick={() => window.openContactForm && window.openContactForm()}
                 style={{
