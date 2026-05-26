@@ -206,7 +206,6 @@ export default function ServicesPage() {
       {/* --- GALLERY LINKS RESTORED --- */}
       <div style={{ width: "100vw", background: "#18191c", padding: "18px 0 32px 0", textAlign: "center" }}>
         <a href="/galleries" style={{ background: "#ffd700", color: "#18191c", fontWeight: 800, fontSize: "1.15em", padding: "14px 38px", borderRadius: 12, textDecoration: "none", boxShadow: "0 2px 12px #0007", letterSpacing: 1, border: "none", fontFamily: "'Montserrat', sans-serif", margin: "0 12px" }}>View Full Gallery</a>
-        <a href="/portfolio" style={{ background: "#ffd700", color: "#18191c", fontWeight: 800, fontSize: "1.15em", padding: "14px 38px", borderRadius: 12, textDecoration: "none", boxShadow: "0 2px 12px #0007", letterSpacing: 1, border: "none", fontFamily: "'Montserrat', sans-serif", margin: "0 12px" }}>Portfolio</a>
       </div>
       {showMenu && <MenuDropdown onContact={openContact} />}
       <main style={{ background: "#101014", minHeight: "100vh", color: "#ece6d6", fontFamily: "'Montserrat', sans-serif", paddingTop: 60 }}>
