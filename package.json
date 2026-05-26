@@ -11,7 +11,8 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.98.0",
     "keen-slider": "^6.8.6",
-    "next": "16.1.6",
+    "next": "^16.2.6",
+    "postcss": "^8.5.15",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
