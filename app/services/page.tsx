@@ -9,6 +9,7 @@ declare global {
 import { useEffect, useRef, useState } from "react";
 import MenuDropdown from "../components/MenuDropdown";
 import content from "../content.json";
+import MiniGalleryCarousel from "../components/MiniGalleryCarousel";
 // Footer link styles
 const footerLinkStyle = {
   color: "#ffd700",
@@ -127,6 +128,31 @@ export default function ServicesPage() {
   }, []);
   return (
     <>
+      {/* Intro Section: Two Quotes, Video, Banner, Tagline */}
+      <div style={{ width: "100vw", background: "#101014", paddingTop: 32, paddingBottom: 0, textAlign: "center" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto 18px auto", color: "#ffd700", fontFamily: "'Playfair Display', serif", fontSize: "1.25em", fontStyle: "italic", fontWeight: 600, letterSpacing: 0.5, textShadow: "0 2px 8px #000a" }}>
+          <div style={{ marginBottom: 12 }}>
+            “Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world”<br/>
+            <span style={{ fontSize: "0.95em", color: "#ffe9a6" }}>— Albert Einstein</span>
+          </div>
+          <div style={{ marginBottom: 24 }}>
+            “Deep into that darkness peering, long I stood there, wondering, fearing, doubting, dreaming dreams no mortal ever dared to dream before.”<br/>
+            <span style={{ fontSize: "0.95em", color: "#ffe9a6" }}>— Edgar Allan Poe</span>
+          </div>
+        </div>
+        <div style={{ maxWidth: 720, margin: "0 auto 24px auto", borderRadius: 18, overflow: "hidden", boxShadow: "0 4px 32px #000a" }}>
+          <video src="/library.mp4" controls autoPlay muted loop style={{ width: "100%", height: "auto", background: "#000" }} poster="/photos/imported/Clouds1Edit2.jpg" />
+        </div>
+        <div style={{ position: "relative", zIndex: 5, textAlign: "center", width: "100%", marginTop: 32 }}>
+          <h1 className="banner-title" style={{ background: "linear-gradient(92deg, #fffbe6 5%, #e6c36a 20%, #bfa14a 40%, #ffd700 60%, #bfa14a 80%, #fffbe6 95%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", fontFamily: "'Cinzel', 'Playfair Display', serif", fontSize: "2.7em", fontWeight: 700, letterSpacing: 2, textAlign: "center", textShadow: "0 2px 24px #000, 0 0 8px #bfa14a99, 0 1px 0 #fffbe6, 0 2px 8px #000a", opacity: 1 }}>
+            <span ref={devilRef} className="devil-glow" style={{ color: "#fffbe6", textShadow: "0 0 18px #7f00ff, 0 0 32px #ffd700, 0 0 48px #7f00ff" }}>Devil</span>lier Media
+          </h1>
+          <div style={{ marginTop: 18, fontFamily: "'Cinzel',serif", fontSize: "1.15em", color: "#ffd700", fontWeight: 700, letterSpacing: 1, textShadow: "0 2px 8px #000a" }}>{content.header.availableNow}</div>
+          <p className="banner-tagline" style={{ marginTop: 10, background: "linear-gradient(90deg, #fffbe6 10%, #e6c36a 40%, #ffd700 60%, #bfa14a 90%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", fontFamily: "'Playfair Display', serif", fontSize: "1.3em", fontStyle: "italic", textShadow: "0 2px 12px #000, 0 0 6px #ffd70099", opacity: showTagline ? 1 : 0, transition: "opacity 0.4s" }}>
+            Where Curiosity Leads, Stories Follow
+          </p>
+        </div>
+      </div>
       {/* Wearing of the Green Announcement Banner */}
       <div style={{
         width: "100vw",
