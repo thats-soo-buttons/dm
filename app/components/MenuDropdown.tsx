@@ -6,7 +6,11 @@ const menuLinks = [
   { label: "www.tessdevillier.com", url: "https://www.tessdevillier.com" },
 ];
 
-export default function MenuDropdown() {
+type MenuDropdownProps = {
+  onContact?: () => void;
+};
+
+export default function MenuDropdown({ onContact }: MenuDropdownProps) {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -84,11 +88,7 @@ export default function MenuDropdown() {
             </a>
           ))}
           <button
-            onClick={() => {
-              if (typeof window !== "undefined" && (window as any).openContactForm) {
-                (window as any).openContactForm();
-              }
-            }}
+            onClick={onContact}
             style={{
               color: "#ffd700",
               fontWeight: 600,

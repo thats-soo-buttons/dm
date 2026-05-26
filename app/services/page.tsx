@@ -8,6 +8,7 @@ declare global {
 }
 import { useEffect, useRef, useState } from "react";
 import MenuDropdown from "../components/MenuDropdown";
+import ContactModal from "../components/ContactModal";
 import content from "../content.json";
 // Footer link styles
 const footerLinkStyle = {
@@ -121,6 +122,11 @@ export default function ServicesPage() {
     setPhotoModalOpen(true);
   };
   const closePhotoModal = () => setPhotoModalOpen(false);
+
+  // Contact modal state
+  const [contactOpen, setContactOpen] = React.useState(false);
+  const openContact = () => setContactOpen(true);
+  const closeContact = () => setContactOpen(false);
   // Track scroll to show menu only after services section
   const [showMenu, setShowMenu] = React.useState(false);
   React.useEffect(() => {
@@ -136,6 +142,8 @@ export default function ServicesPage() {
   }, []);
   return (
     <>
+      {/* Contact Modal */}
+      <ContactModal open={contactOpen} onClose={closeContact} />
       {/* Intro Section: Two Quotes, Video, Banner, Tagline */}
       <div style={{ width: "100vw", background: "#101014", paddingTop: 32, paddingBottom: 0, textAlign: "center" }}>
         <div style={{ maxWidth: 800, margin: "0 auto 18px auto", color: "#ffd700", fontFamily: "'Playfair Display', serif", fontSize: "1.25em", fontStyle: "italic", fontWeight: 600, letterSpacing: 0.5, textShadow: "0 2px 8px #000a" }}>
@@ -188,7 +196,7 @@ export default function ServicesPage() {
           </a>
         </span>
       </div>
-      {showMenu && <MenuDropdown />}
+      {showMenu && <MenuDropdown onContact={openContact} />}
       <main style={{ background: "#101014", minHeight: "100vh", color: "#ece6d6", fontFamily: "'Montserrat', sans-serif", paddingTop: 60 }}>
         {/* Cinematic Banner */}
         <section style={{ position: "relative", width: "100%", minHeight: 340, background: "#18191c", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
@@ -442,7 +450,7 @@ export default function ServicesPage() {
               </a>
               <a href="https://ko-fi.com/thatssoobuttons/shop" target="_blank" title="Shop" style={{ background: "#ffd700", color: "#222", fontWeight: "bold", padding: "6px 18px", borderRadius: 8, marginLeft: 12, textDecoration: "none", transition: "background 0.2s, color 0.2s" }}>SHOP</a>
               <button
-                onClick={() => window.openContactForm && window.openContactForm()}
+                onClick={openContact}
                 style={{
                   background: '#ffd700',
                   color: '#222',
