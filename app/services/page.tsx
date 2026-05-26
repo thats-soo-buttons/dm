@@ -65,56 +65,49 @@ function isValidModalType(key: any): key is ModalType {
 
 
 export default function ServicesPage() {
-          // Render MenuDropdown only on /services page
-          return (
-            <>
-              <MenuDropdown />
-              {/* ...existing code... */}
-            </>
-          );
-        // Prevent hydration mismatch: only render animated header after mount
-        const [hasMounted, setHasMounted] = useState(false);
-        useEffect(() => { setHasMounted(true); }, []);
-      // Rotating tagline logic (from content.json)
-      const taglines = [
-        "Cinematic Vision. Personal Touch",
-        "Photography",
-        "World Building",
-        "Consulting"
-      ];
-      const [taglineIdx, setTaglineIdx] = useState(0); // Always starts at 0
-      const [showTagline, setShowTagline] = useState(true);
-      const taglineTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Prevent hydration mismatch: only render animated header after mount
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => { setHasMounted(true); }, []);
+  // Rotating tagline logic (from content.json)
+  const taglines = [
+    "Cinematic Vision. Personal Touch",
+    "Photography",
+    "World Building",
+    "Consulting"
+  ];
+  const [taglineIdx, setTaglineIdx] = useState(0); // Always starts at 0
+  const [showTagline, setShowTagline] = useState(true);
+  const taglineTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-      useEffect(() => {
-        taglineTimeout.current = setTimeout(() => {
-          setShowTagline(false);
-          setTimeout(() => {
-            setTaglineIdx((i) => (i + 1) % taglines.length);
-            setShowTagline(true);
-          }, 400);
-        }, 3200);
-        return () => {
-          if (taglineTimeout.current !== null) {
-            clearTimeout(taglineTimeout.current);
-          }
-        };
-      }, [taglineIdx, showTagline]);
+  useEffect(() => {
+    taglineTimeout.current = setTimeout(() => {
+      setShowTagline(false);
+      setTimeout(() => {
+        setTaglineIdx((i) => (i + 1) % taglines.length);
+        setShowTagline(true);
+      }, 400);
+    }, 3200);
+    return () => {
+      if (taglineTimeout.current !== null) {
+        clearTimeout(taglineTimeout.current);
+      }
+    };
+  }, [taglineIdx, showTagline]);
 
-      // Devil glow effect: glow for 1.2s, then normal
-      const devilRef = useRef<HTMLElement | null>(null);
-      useEffect(() => {
-        const devil = devilRef.current;
-        if (!devil) return;
-        devil.classList.add("devil-glow");
-        const timer = setTimeout(() => {
-          devil.classList.remove("devil-glow");
-        }, 1200);
-        return () => clearTimeout(timer);
-      }, []);
-    // Modal state for service details/pricing/booking/gallery
-    const [modal, setModal] = React.useState({ open: false, service: null, type: null });
-    const closeModal = () => setModal({ open: false, service: null, type: null });
+  // Devil glow effect: glow for 1.2s, then normal
+  const devilRef = useRef<HTMLElement | null>(null);
+  useEffect(() => {
+    const devil = devilRef.current;
+    if (!devil) return;
+    devil.classList.add("devil-glow");
+    const timer = setTimeout(() => {
+      devil.classList.remove("devil-glow");
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
+  // Modal state for service details/pricing/booking/gallery
+  const [modal, setModal] = React.useState({ open: false, service: null, type: null });
+  const closeModal = () => setModal({ open: false, service: null, type: null });
   // Modal state for 'Other Photography Services'
   const [photoModalOpen, setPhotoModalOpen] = React.useState(false);
   const openPhotoModal = (e: React.SyntheticEvent) => {
