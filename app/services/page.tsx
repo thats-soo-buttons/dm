@@ -50,8 +50,17 @@ const inputStyle = {
 };
 
 // Move type declarations after imports for .tsx compatibility
+
 type ServiceKey = "cinematicPhotography" | "worldBuilding" | "creativeDirection";
 type ModalType = "details" | "pricing" | "booking" | "gallery";
+
+function isValidServiceKey(key: any): key is ServiceKey {
+  return ["cinematicPhotography", "worldBuilding", "creativeDirection"].includes(key);
+}
+
+function isValidModalType(key: any): key is ModalType {
+  return ["details", "pricing", "booking", "gallery"].includes(key);
+}
 
 
 export default function ServicesPage() {
@@ -368,16 +377,53 @@ export default function ServicesPage() {
         </section>
 
         {/* Modal for service details/pricing/booking/gallery */}
-        {modal.open && modal.service && modal.type && (
-          <div className="service-modal" style={{ display: "flex", alignItems: "center", justifyContent: "center", zIndex: 10012, position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", background: "rgba(0,0,0,0.5)" }}>
-            <div className="modal-content" style={{ maxWidth: 400, textAlign: "center", background: "#fff", borderRadius: 12, padding: 24, position: "relative" }}>
-              <span className="close-modal" onClick={closeModal} style={{ position: "absolute", top: 12, right: 18, fontSize: 28, cursor: "pointer" }}>&times;</span>
-              {modal.service !== null && modal.service in content && modal.type in (content[modal.service as ServiceKey] || {})
-                ? (content[modal.service as ServiceKey] as any)[modal.type]
-                : <p>Content not found.</p>}
+        {modal.open && isValidServiceKey(modal.service) && isValidModalType(modal.type) && (() => {
+          const service = modal.service;
+          const type = modal.type;
+          let modalContent: React.ReactNode = <p>Content not found.</p>;
+          if (service === "cinematicPhotography") {
+            if (type === "details") {
+              modalContent = <>
+                <h3>{content.cinematicPhotography.title}</h3>
+                <p>{content.cinematicPhotography.intro}</p>
+                <strong>How it works:</strong>
+                <ul>{content.cinematicPhotography.howItWorks.map((item, i) => <li key={i}>{item}</li>)}</ul>
+                <strong>What you get:</strong>
+                <p>{content.cinematicPhotography.whatYouGet}</p>
+              </>;
+            }
+          } else if (service === "worldBuilding") {
+            if (type === "details") {
+              modalContent = <>
+                <h3>{content.worldBuilding.title}</h3>
+                <p>{content.worldBuilding.intro}</p>
+                <strong>Services include:</strong>
+                <ul>{content.worldBuilding.services.map((item, i) => <li key={i}>{item}</li>)}</ul>
+                <strong>Why it matters:</strong>
+                <p>{content.worldBuilding.whyItMatters}</p>
+              </>;
+            }
+          } else if (service === "creativeDirection") {
+            if (type === "details") {
+              modalContent = <>
+                <h3>{content.creativeDirection.title}</h3>
+                <p>{content.creativeDirection.intro}</p>
+                <strong>What I offer:</strong>
+                <ul>{content.creativeDirection.whatIOffer.map((item, i) => <li key={i}>{item}</li>)}</ul>
+                <strong>Why work with me?</strong>
+                <p>{content.creativeDirection.whyWorkWithMe}</p>
+              </>;
+            }
+          }
+          return (
+            <div className="service-modal" style={{ display: "flex", alignItems: "center", justifyContent: "center", zIndex: 10012, position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", background: "rgba(0,0,0,0.5)" }}>
+              <div className="modal-content" style={{ maxWidth: 400, textAlign: "center", background: "#fff", borderRadius: 12, padding: 24, position: "relative" }}>
+                <span className="close-modal" onClick={closeModal} style={{ position: "absolute", top: 12, right: 18, fontSize: 28, cursor: "pointer" }}>&times;</span>
+                {modalContent}
+              </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
 
         {/* FAQ and AccordionSection removed as requested */}
 
