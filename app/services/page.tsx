@@ -190,11 +190,28 @@ export default function ServicesPage() {
         </span>
       </div>
 
-      {/* --- FLYER SECTION RESTORED --- */}
-      <div style={{ width: "100vw", background: "#18191c", padding: "32px 0 18px 0", textAlign: "center", boxShadow: "0 2px 24px #000a" }}>
-        <img src="/photos/imported/2024FlyerWeb.jpg" alt="2024 Flyer" style={{ maxWidth: 420, width: "90%", borderRadius: 18, boxShadow: "0 4px 32px #000a", marginBottom: 12, border: "2.5px solid #ffd700" }} />
-        <div style={{ marginTop: 10 }}>
-          <a href="/photos/imported/2024FlyerWeb.jpg" download style={{ background: "#ffd700", color: "#18191c", fontWeight: 800, fontSize: "1.1em", padding: "10px 28px", borderRadius: 8, textDecoration: "none", boxShadow: "0 2px 8px #0007", letterSpacing: 1, border: "none", fontFamily: "'Montserrat', sans-serif" }}>Download Flyer</a>
+      {/* --- FLYER SECTION --- */}
+      <div style={{ width: "100vw", background: "#18191c", padding: "36px 0 24px 0", textAlign: "center", boxShadow: "0 2px 24px #000a" }}>
+        <div style={{
+          display: "inline-block",
+          background: "linear-gradient(120deg, #18191c 80%, #ffd70022 100%)",
+          border: "2.5px solid #ffd700",
+          borderRadius: 18,
+          boxShadow: "0 4px 32px #000a",
+          padding: "32px 32px 28px 32px",
+          maxWidth: 480,
+          width: "90%",
+          margin: "0 auto"
+        }}>
+          <div style={{ fontSize: "1.25em", color: "#ffd700", fontWeight: 800, marginBottom: 18, letterSpacing: 1, fontFamily: "'Cinzel', serif" }}>
+            📸 Photography Event | Cinematic | Mini Sessions <span style={{ color: "#fffbe6", fontWeight: 700 }}>Starting at $75</span>
+          </div>
+          <div style={{ fontSize: "1.13em", color: "#ffd700", fontWeight: 700, marginBottom: 14, letterSpacing: 0.5, fontFamily: "'Cinzel', serif" }}>
+            ✍️ Narrative Design <span style={{ color: "#fffbe6", fontWeight: 700 }}>Dialogue | Progression | World-Building</span> <span style={{ color: "#ffd700", fontWeight: 700 }}>Starting at $125/project</span>
+          </div>
+          <div style={{ fontSize: "1.13em", color: "#ffd700", fontWeight: 700, marginBottom: 0, letterSpacing: 0.5, fontFamily: "'Cinzel', serif" }}>
+            🎨 Creative Consulting <span style={{ color: "#fffbe6", fontWeight: 700 }}>Lyrics | Plot Expansion | Graphic Design | &amp; More</span> <span style={{ color: "#ffd700", fontWeight: 700 }}>Starting at $50/hr</span>
+          </div>
         </div>
       </div>
 
