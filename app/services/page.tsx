@@ -262,35 +262,7 @@ export default function ServicesPage() {
             <blockquote style={{ color: "#bfc1c2", fontSize: "1.5em", fontStyle: "italic", borderLeft: "4px solid #ffd700", marginBottom: 32, paddingLeft: 18 }}>
               “Where Curiosity Leads, Stories Follow”
             </blockquote>
-            {/* Gallery Showcase */}
-            <div style={{ marginBottom: 44 }}>
-              <h2 style={{ color: "#ffd700", fontFamily: "'Cinzel', serif", fontSize: "2em", fontWeight: 800, marginBottom: 28, letterSpacing: 1 }}>Featured Work</h2>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
-                {/* Cinematic Photography */}
-                <div style={{ background: "rgba(24, 25, 28, 0.82)", borderRadius: 16, boxShadow: "0 2px 16px #000a, 0 0px 0px 1.5px #bfa14a inset", border: "1.5px solid #bfa14a", padding: "36px 28px", minHeight: 480 }}>
-                  <img src="/photos/imported/ColoringClub211.jpg" alt="Gallery Sample 2" style={{ width: "100%", display: "block", filter: "grayscale(0.2)", borderRadius: "10px 10px 0 0" }} />
-                  <div style={{ padding: "16px 18px" }}>Event Photos: Every Guest a Star</div>
-                </div>
-                {/* Digital Archiving */}
-                <div style={{ background: "rgba(24, 25, 28, 0.82)", borderRadius: 16, boxShadow: "0 2px 16px #000a, 0 0px 0px 1.5px #bfa14a inset", border: "1.5px solid #bfa14a", padding: "36px 28px", minHeight: 480 }}>
-                  <img src="/photos/imported/Untitled-14.jpg" alt="Gallery Sample 1" style={{ width: "100%", display: "block", filter: "grayscale(0.2)", borderRadius: "10px 10px 0 0" }} />
-                  <div style={{ padding: "16px 18px" }}>A memory you can hold onto—matching tattoos, a moment preserved for a lifetime.</div>
-                </div>
-                {/* World Building */}
-                <div style={{ background: "rgba(24, 25, 28, 0.82)", borderRadius: 16, boxShadow: "0 2px 16px #000a, 0 0px 0px 1.5px #bfa14a inset", border: "1.5px solid #bfa14a", padding: "36px 28px", minHeight: 480 }}>
-                  <img src="/photos/imported/_1270500.jpg" alt="Gallery Sample 3" style={{ width: "100%", display: "block", filter: "grayscale(0.2)", borderRadius: "10px 10px 0 0" }} />
-                  <div style={{ padding: "16px 18px" }}>By the looks of the ruins, you start to question your trust in the old man's direction.<br /><span style={{ color: "#ffd700" }}>– World Building</span></div>
-                </div>
-                {/* Consulting (World Building collage) */}
-                <div style={{ background: "rgba(24, 25, 28, 0.82)", borderRadius: 16, boxShadow: "0 2px 16px #000a, 0 0px 0px 1.5px #bfa14a inset", border: "1.5px solid #bfa14a", padding: "36px 28px", minHeight: 480 }}>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 8, justifyContent: "center", alignItems: "center" }}>
-                    <img src="/photos/imported/ruin%20landscape%201.jpg" alt="Ruin Landscape 1" style={{ width: "80%", display: "block", filter: "grayscale(0.2)", borderRadius: "8px 8px 0 0" }} />
-                    <img src="/photos/imported/ruin%20landscape%202.jpg" alt="Ruin Landscape 2" style={{ width: "80%", display: "block", filter: "grayscale(0.2)", borderRadius: "0 0 8px 8px" }} />
-                  </div>
-                  <div style={{ padding: "16px 18px" }}>Before: a forgotten ruin. After: a world reborn.<br /><span style={{ color: "#ffd700" }}>– World Building</span></div>
-                </div>
-              </div>
-            </div>
+
 
             {/* Shop Wallpaper/Graphics Section */}
             <div style={{ margin: '48px auto', maxWidth: 700, background: 'rgba(24,25,28,0.92)', borderRadius: 16, boxShadow: '0 2px 16px #000a', border: '1.5px solid #ffd700', padding: '36px 28px', textAlign: 'center' }}>
