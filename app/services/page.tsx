@@ -162,33 +162,7 @@ export default function ServicesPage() {
           </p>
         </div>
       </div>
-      {/* Wearing of the Green Announcement Banner */}
-      <div style={{
-        width: "100vw",
-        background: "#ffd700",
-        color: "#181c1f",
-        textAlign: "center",
-        fontWeight: 600,
-        fontSize: "1.15em",
-        padding: "14px 0",
-        boxShadow: "0 2px 8px #0002",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        zIndex: 9999,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "12px",
-      }}>
-        <span style={{ fontSize: "1.5em" }}>🍀</span>
-        <span style={{ fontWeight: 700 }}>
-          WEARING OF THE GREEN PHOTOS AVAILABLE SOON -
-          <a href="https://galleries.devilliermedia.com" target="_blank" rel="noopener noreferrer" style={{ color: "#181c1f", textDecoration: "underline", fontWeight: 700, marginLeft: "8px" }}>
-            HERE
-          </a>
-        </span>
-      </div>
+
 
       {/* --- FLYER SECTION --- */}
       <div style={{ width: "100vw", background: "#18191c", padding: "36px 0 24px 0", textAlign: "center", boxShadow: "0 2px 24px #000a" }}>
@@ -223,6 +197,7 @@ export default function ServicesPage() {
       {/* --- GALLERY LINKS RESTORED --- */}
       <div style={{ width: "100vw", background: "#18191c", padding: "18px 0 32px 0", textAlign: "center" }}>
         <a href="/galleries" style={{ background: "#ffd700", color: "#18191c", fontWeight: 800, fontSize: "1.15em", padding: "14px 38px", borderRadius: 12, textDecoration: "none", boxShadow: "0 2px 12px #0007", letterSpacing: 1, border: "none", fontFamily: "'Montserrat', sans-serif", margin: "0 12px" }}>View Full Gallery</a>
+        <a href="https://galleries.devilliermedia.com" target="_blank" rel="noopener noreferrer" style={{ color: "#ffd700", textDecoration: "underline", fontWeight: 700, marginLeft: "18px", fontSize: "1.08em", verticalAlign: "middle" }}>Special Event Gallery</a>
       </div>
       {showMenu && <MenuDropdown onContact={openContact} />}
       <main style={{ background: "#101014", minHeight: "100vh", color: "#ece6d6", fontFamily: "'Montserrat', sans-serif", paddingTop: 60 }}>
