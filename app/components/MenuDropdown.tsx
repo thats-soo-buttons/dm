@@ -3,11 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 
 
 const menuLinks = [
-  { label: "TessDevillier.com", url: "https://www.tessdevillier.com" },
-  { label: "Thatssoobuttons.com", url: "https://thatssoobuttons.com" },
-  { label: "OnTheFlyNetwork.com", url: "https://ontheflynetwork.com" },
-  { label: "Gallery", url: "https://galleries.devilliermedia.com" },
-  { label: "Portfolio", url: "/portfolio" },
+  { label: "www.tessdevillier.com", url: "https://www.tessdevillier.com" },
 ];
 
 export default function MenuDropdown() {
@@ -69,8 +65,8 @@ export default function MenuDropdown() {
             <a
               key={link.label}
               href={link.url}
-              target={link.url.startsWith("http") ? "_blank" : undefined}
-              rel={link.url.startsWith("http") ? "noopener noreferrer" : undefined}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 color: "#ffd700",
                 fontWeight: 600,

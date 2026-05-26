@@ -17,15 +17,8 @@ export default function Home() {
           author: "Albert Einstein"
         }
       ];
-      const [openerIdx, setOpenerIdx] = useState(0);
-      useEffect(() => {
-        if (showOpener) {
-          const quoteTimer = setTimeout(() => {
-            setOpenerIdx((i) => (i + 1) % openerQuotes.length);
-          }, 4000); // Change quote every 4s
-          return () => clearTimeout(quoteTimer);
-        }
-      }, [showOpener, openerIdx]);
+      // Pick a random quote on mount
+      const [openerIdx] = useState(() => Math.floor(Math.random() * openerQuotes.length));
       // Banner visibility logic
       const [showOpener, setShowOpener] = useState(true);
       const [showBanner, setShowBanner] = useState(true);

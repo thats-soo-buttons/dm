@@ -1,3 +1,39 @@
+            {/* Hire Me Flyer Section */}
+            <div style={{ margin: '48px auto', maxWidth: 700, background: 'rgba(24,25,28,0.97)', borderRadius: 16, boxShadow: '0 2px 16px #000a', border: '1.5px solid #ffd700', padding: '36px 28px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <h2 style={{ color: '#ffd700', fontFamily: "'Cinzel', serif", fontSize: '2em', fontWeight: 800, marginBottom: 18, letterSpacing: 1 }}>Hire Me — Services at a Glance</h2>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px 0', color: '#fffbe6', fontSize: '1.15em', textAlign: 'left', maxWidth: 480 }}>
+                <li style={{ marginBottom: 16 }}>
+                  <strong>Photography:</strong> Portraits, events, creative shoots, and more.<br />
+                  <span style={{ color: '#ffd700', fontWeight: 700 }}>Starting at $75 mini session (10 edited photos)</span>
+                </li>
+                <li style={{ marginBottom: 16 }}>
+                  <strong>World-Building:</strong> Visual storytelling, lore creation, narrative design, immersive design.<br />
+                  <span style={{ color: '#ffd700', fontWeight: 700 }}>Starting at $75 : Contact for Quote</span>
+                </li>
+                <li style={{ marginBottom: 16 }}>
+                  <strong>Creative Consulting:</strong> Project planning, world-building, artistic guidance.<br />
+                  <span style={{ color: '#ffd700', fontWeight: 700 }}>Starting at $50/hr</span>
+                </li>
+              </ul>
+              <div style={{ fontSize: '1.1em', color: '#ffe9a6', marginBottom: 18 }}>Let’s create something unforgettable together!</div>
+              <button
+                onClick={() => window.openContactForm && window.openContactForm()}
+                style={{
+                  background: '#ffd700',
+                  color: '#222',
+                  fontWeight: 800,
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontSize: '1.08em',
+                  padding: '12px 32px',
+                  borderRadius: 8,
+                  border: 'none',
+                  margin: '0 8px',
+                  cursor: 'pointer',
+                  boxShadow: '0 2px 8px #0003',
+                  transition: 'background 0.2s, color 0.2s',
+                }}
+              >Contact Me</button>
+            </div>
 "use client";
 // Type declaration for window.openContactForm
 declare global {
@@ -234,6 +270,13 @@ export default function ServicesPage() {
                   <div style={{ padding: "16px 18px" }}>Before: a forgotten ruin. After: a world reborn.<br /><span style={{ color: "#ffd700" }}>– World Building</span></div>
                 </div>
               </div>
+            </div>
+
+            {/* Shop Wallpaper/Graphics Section */}
+            <div style={{ margin: '48px auto', maxWidth: 700, background: 'rgba(24,25,28,0.92)', borderRadius: 16, boxShadow: '0 2px 16px #000a', border: '1.5px solid #ffd700', padding: '36px 28px', textAlign: 'center' }}>
+              <h2 style={{ color: '#ffd700', fontFamily: "'Cinzel', serif", fontSize: '2em', fontWeight: 800, marginBottom: 18, letterSpacing: 1 }}>Shop Wallpaper / Graphics</h2>
+              <p style={{ color: '#fffbe6', fontSize: '1.15em', marginBottom: 18 }}>Browse, donate, or pay-to-download exclusive wallpapers and graphics.</p>
+              <a href="https://ko-fi.com/thatssoobuttons/shop" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', background: '#ffd700', color: '#18191c', fontWeight: 800, fontSize: '1.2em', padding: '16px 38px', borderRadius: 12, textDecoration: 'none', boxShadow: '0 2px 12px #0007', letterSpacing: 1, border: 'none', fontFamily: "'Montserrat', sans-serif", marginTop: 8 }}>Visit Ko-fi Shop</a>
             </div>
             {/* Call to Action */}
             <div style={{ textAlign: "center", marginBottom: 48 }}>
