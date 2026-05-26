@@ -346,7 +346,7 @@ export default function ServicesPage() {
           <div className="service-modal" style={{ display: "flex", alignItems: "center", justifyContent: "center", zIndex: 10012, position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", background: "rgba(0,0,0,0.5)" }}>
             <div className="modal-content" style={{ maxWidth: 400, textAlign: "center", background: "#fff", borderRadius: 12, padding: 24, position: "relative" }}>
               <span className="close-modal" onClick={closeModal} style={{ position: "absolute", top: 12, right: 18, fontSize: 28, cursor: "pointer" }}>&times;</span>
-              {modal.service in content && modal.type in (content[modal.service as ServiceKey] || {})
+              {modal.service && modal.service in content && modal.type in (content[modal.service as ServiceKey] || {})
                 ? (content[modal.service as ServiceKey] as any)[modal.type]
                 : <p>Content not found.</p>}
             </div>
