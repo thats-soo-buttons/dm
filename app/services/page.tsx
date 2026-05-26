@@ -9,7 +9,6 @@ declare global {
 import { useEffect, useRef, useState } from "react";
 import MenuDropdown from "../components/MenuDropdown";
 import content from "../content.json";
-import MiniGalleryCarousel from "../components/MiniGalleryCarousel";
 // Footer link styles
 const footerLinkStyle = {
   color: "#ffd700",
