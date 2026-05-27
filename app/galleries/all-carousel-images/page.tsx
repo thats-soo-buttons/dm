@@ -1,7 +1,7 @@
 import React from "react";
 
 // Import the GALLERY_IMAGES array from the carousel
-import { GALLERY_IMAGES } from "../components/MiniGalleryCarousel";
+import { GALLERY_IMAGES } from "../../components/MiniGalleryCarousel";
 
 export default function AllCarouselImagesPage() {
   return (
