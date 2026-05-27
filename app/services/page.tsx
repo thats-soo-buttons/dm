@@ -341,7 +341,6 @@ export default function ServicesPage() {
             {content.footer.copyright}
           </div>
         </footer>
-      </main>
     </>
   );
 }
