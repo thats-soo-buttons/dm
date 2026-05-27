@@ -233,22 +233,6 @@ export default function ServicesPage() {
       {showMenu && <MenuDropdown onContact={openContact} />}
       {/* Removed duplicate Devillier Media banner and tightened layout for desktop */}
 
-        {/* Cinematic Banner and Tagline */}
-        {/* Top Tagline Quote */}
-        <div style={{ width: "100vw", background: "#101014", paddingTop: 32, paddingBottom: 0, textAlign: "center" }}>
-          <div style={{ maxWidth: 800, margin: "0 auto 18px auto", color: "#ffd700", fontFamily: "'Playfair Display', serif", fontSize: "1.25em", fontStyle: "italic", fontWeight: 600, letterSpacing: 0.5, textShadow: "0 2px 8px #000a" }}>
-            “Where Curiosity Leads, Stories Follow”<br/>
-            <span style={{ fontSize: "0.95em", color: "#ffe9a6" }}>- Tess D.</span>
-          </div>
-        </div>
-        <section style={{ background: "#101014", minHeight: "100vh", padding: "0 0 64px 0" }}>
-          <div style={{ maxWidth: 900, margin: "0 auto", paddingTop: 48 }}>
-
-
-            {/* Removed duplicate bottom Wallpaper/Graphics Shop section as requested */}
-
-          </div>
-        </section>
 
         {/* Modal for service details/pricing/booking/gallery */}
         {modal.open && isValidServiceKey(modal.service) && isValidModalType(modal.type) && (() => {
