@@ -169,22 +169,25 @@ export default function ServicesPage() {
       <div style={{ width: "100vw", background: "#18191c", padding: "36px 0 24px 0", textAlign: "center", boxShadow: "0 2px 24px #000a" }}>
           {/* Flyer Section (Two-column Flex Layout) */}
           <div style={{ display: "flex", justifyContent: "center", alignItems: "stretch", width: "100vw", margin: "32px 0 0 0", gap: 32 }}>
-            {/* Left: Pricing/Services Info */}
-            <div style={{ background: "#18181c", border: "2px solid #ffd700", borderRadius: 16, padding: "28px 32px 24px 32px", boxShadow: "0 2px 24px #000a", maxWidth: 420, width: "100%", color: "#ffd700", fontFamily: "'Playfair Display', serif", fontSize: "1.18em", fontWeight: 600, letterSpacing: 0.5, textAlign: "center", margin: 0 }}>
-              <div style={{ marginBottom: 12, fontSize: "1.1em", fontWeight: 700, color: "#fffbe6", textShadow: "0 2px 8px #000a" }}>
-                📸 Photography Event | Cinematic | Mini Sessions<br/>
+            {/* Left: Pricing/Services Info with Work with Me button below */}
+            <div style={{ background: "#18181c", border: "2px solid #ffd700", borderRadius: 16, padding: "28px 32px 24px 32px", boxShadow: "0 2px 24px #000a", maxWidth: 420, width: "100%", color: "#ffd700", fontFamily: "'Playfair Display', serif", fontSize: "1.13em", fontWeight: 600, letterSpacing: 0.5, textAlign: "left", margin: 0, display: "flex", flexDirection: "column", alignItems: "stretch" }}>
+              <div style={{ marginBottom: 14, fontSize: "1.08em", fontWeight: 700, color: "#fffbe6", textShadow: "0 2px 8px #000a" }}>
+                <span style={{ fontWeight: 800, color: "#ffd700" }}>📸 Photography:</span> Event | Cinematic | Mini Sessions<br/>
                 <span style={{ fontWeight: 400, color: "#ffd700" }}>Starting at $75</span>
               </div>
-              <div style={{ marginBottom: 10, color: "#ffb347" }}>
-                🔥 Narrative Design Dialogue | Progression | World-Building<br/>
+              <div style={{ marginBottom: 14, fontWeight: 700, color: "#ffb347" }}>
+                <span style={{ fontWeight: 800, color: "#ffd700" }}>🔥 Narrative Design:</span> Dialogue | Progression | World-Building<br/>
                 <span style={{ fontWeight: 400, color: "#ffd700" }}>Starting at $125/project</span>
               </div>
-              <div style={{ marginBottom: 18, color: "#ffb3c6" }}>
-                🎤 Creative Consulting Lyrics | Plot Expansion | Graphic Design<br/>
+              <div style={{ marginBottom: 18, fontWeight: 700, color: "#ffb3c6" }}>
+                <span style={{ fontWeight: 800, color: "#ffd700" }}>🎤 Creative Consulting:</span> Lyrics | Plot Expansion | Graphic Design<br/>
                 <span style={{ fontWeight: 400, color: "#ffd700" }}>& More Starting at $50/hr</span>
               </div>
+              <button style={{ background: "#ffd700", color: "#18181c", fontWeight: 700, fontSize: "1.08em", border: "none", borderRadius: 8, padding: "10px 24px", marginTop: 8, cursor: "pointer", boxShadow: "0 2px 8px #000a", alignSelf: "center" }} onClick={() => setContactOpen(true)}>
+                Work with Me
+              </button>
             </div>
-            {/* Right: Wallpaper/Graphics, Ko-fi, Work with Me */}
+            {/* Right: Wallpaper/Graphics, Ko-fi */}
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", minWidth: 320, maxWidth: 420, width: "100%", background: "#18181c", border: "2px solid #ffd700", borderRadius: 16, padding: "28px 32px 24px 32px", boxShadow: "0 2px 24px #000a", color: "#ffd700", fontFamily: "'Playfair Display', serif", fontSize: "1.1em", fontWeight: 600, letterSpacing: 0.5, margin: 0 }}>
               <div style={{ marginBottom: 16, color: "#fffbe6", fontWeight: 700, fontSize: "1.08em", textShadow: "0 2px 8px #000a" }}>
                 🎨 Wallpaper / Graphics
@@ -193,9 +196,6 @@ export default function ServicesPage() {
                 Custom digital wallpapers, graphics, and more!<br/>
                 <a href="https://ko-fi.com/devilliermedia/shop" target="_blank" rel="noopener noreferrer" style={{ color: "#ffd700", textDecoration: "underline", fontWeight: 700, marginTop: 8, display: "inline-block" }}>Visit Ko-fi Shop</a>
               </div>
-              <button style={{ background: "#ffd700", color: "#18181c", fontWeight: 700, fontSize: "1.08em", border: "none", borderRadius: 8, padding: "10px 24px", marginTop: 8, cursor: "pointer", boxShadow: "0 2px 8px #000a" }} onClick={() => setContactOpen(true)}>
-                Work with Me
-              </button>
             </div>
           </div>
       </div>
@@ -259,23 +259,18 @@ export default function ServicesPage() {
       `}</style>
 
         {/* Cinematic Banner and Tagline */}
+        {/* Top Tagline Quote */}
+        <div style={{ width: "100vw", background: "#101014", paddingTop: 32, paddingBottom: 0, textAlign: "center" }}>
+          <div style={{ maxWidth: 800, margin: "0 auto 18px auto", color: "#ffd700", fontFamily: "'Playfair Display', serif", fontSize: "1.25em", fontStyle: "italic", fontWeight: 600, letterSpacing: 0.5, textShadow: "0 2px 8px #000a" }}>
+            “Where Curiosity Leads, Stories Follow”<br/>
+            <span style={{ fontSize: "0.95em", color: "#ffe9a6" }}>- Tess D.</span>
+          </div>
+        </div>
         <section style={{ background: "#101014", minHeight: "100vh", padding: "0 0 64px 0" }}>
           <div style={{ maxWidth: 900, margin: "0 auto", paddingTop: 48 }}>
-            <blockquote style={{ color: "#bfc1c2", fontSize: "1.5em", fontStyle: "italic", borderLeft: "4px solid #ffd700", marginBottom: 32, paddingLeft: 18 }}>
-              “Where Curiosity Leads, Stories Follow”
-            </blockquote>
 
 
-            {/* Shop Wallpaper/Graphics Section */}
-            <div style={{ margin: '48px auto', maxWidth: 700, background: 'rgba(24,25,28,0.92)', borderRadius: 16, boxShadow: '0 2px 16px #000a', border: '1.5px solid #ffd700', padding: '36px 28px', textAlign: 'center' }}>
-              <h2 style={{ color: '#ffd700', fontFamily: "'Cinzel', serif", fontSize: '2em', fontWeight: 800, marginBottom: 18, letterSpacing: 1 }}>Shop Wallpaper / Graphics</h2>
-              <p style={{ color: '#fffbe6', fontSize: '1.15em', marginBottom: 18 }}>Browse, donate, or pay-to-download exclusive wallpapers and graphics.</p>
-              <a href="https://ko-fi.com/thatssoobuttons/shop" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', background: '#ffd700', color: '#18191c', fontWeight: 800, fontSize: '1.2em', padding: '16px 38px', borderRadius: 12, textDecoration: 'none', boxShadow: '0 2px 12px #0007', letterSpacing: 1, border: 'none', fontFamily: "'Montserrat', sans-serif", marginTop: 8 }}>Visit Ko-fi Shop</a>
-            </div>
-            {/* Call to Action */}
-            <div style={{ textAlign: "center", marginBottom: 48 }}>
-              <a href="#services-section" style={{ display: "inline-block", background: "#ffd700", color: "#18191c", fontWeight: 800, fontSize: "1.2em", padding: "16px 38px", borderRadius: 12, textDecoration: "none", boxShadow: "0 2px 12px #0007", letterSpacing: 1, border: "none", fontFamily: "'Montserrat', sans-serif" }}>Work With Me</a>
-            </div>
+            {/* Removed duplicate bottom Wallpaper/Graphics Shop section as requested */}
 
           </div>
         </section>
