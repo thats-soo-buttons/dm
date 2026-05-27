@@ -227,7 +227,7 @@ export default function ServicesPage() {
 
       {/* --- GALLERY LINKS RESTORED --- */}
       <div style={{ width: "100vw", background: "#18191c", padding: "18px 0 32px 0", textAlign: "center" }}>
-        <a href="/galleries" style={{ background: "#ffd700", color: "#18191c", fontWeight: 800, fontSize: "1.15em", padding: "14px 38px", borderRadius: 12, textDecoration: "none", boxShadow: "0 2px 12px #0007", letterSpacing: 1, border: "none", fontFamily: "'Montserrat', sans-serif", margin: "0 12px" }}>View Full Gallery</a>
+        <a href="/galleries/all-carousel-images" style={{ color: "#ffd700", textDecoration: "underline", fontWeight: 700, marginLeft: "18px", fontSize: "1.08em", verticalAlign: "middle" }}>View Full Gallery</a>
         <a href="https://galleries.devilliermedia.com" target="_blank" rel="noopener noreferrer" style={{ color: "#ffd700", textDecoration: "underline", fontWeight: 700, marginLeft: "18px", fontSize: "1.08em", verticalAlign: "middle" }}>Special Event Gallery</a>
       </div>
       {showMenu && <MenuDropdown onContact={openContact} />}
