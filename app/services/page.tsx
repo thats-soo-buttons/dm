@@ -137,8 +137,29 @@ export default function ServicesPage() {
     <>
       {/* Contact Modal */}
       <ContactModal open={contactOpen} onClose={closeContact} />
-      {/* Intro Section: Two Quotes, Video, Banner, Tagline */}
-      <div style={{ width: "100vw", background: "#101014", paddingTop: 32, paddingBottom: 0, display: "flex", flexDirection: "column", alignItems: "center" }}>
+      {/* Devillier Media Banner at Top */}
+      <section style={{ position: "relative", width: "100%", minHeight: 340, background: "#18191c", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+        <img src="/photos/imported/Clouds1Edit2.jpg" alt="Banner background" style={{ width: "100%", height: 340, objectFit: "cover", filter: "grayscale(0.1) brightness(0.7)", position: "absolute", top: 0, left: 0, zIndex: 1 }} />
+        {/* Fog overlay with image and animation */}
+        <div className="banner-fog" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: 340, pointerEvents: "none", zIndex: 2, background: "url('https://www.transparenttextures.com/patterns/foggy-birds.png')", opacity: 0.22, animation: "fogMove 32s linear infinite", mixBlendMode: "lighten" }} />
+        {/* Vignette overlay */}
+        <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: 340, pointerEvents: "none", zIndex: 3, background: "radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(30,0,30,0.7) 100%), linear-gradient(180deg,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.2) 60%,rgba(0,0,0,0.8) 100%)" }} />
+        {/* Overlay for extra effects (none for now) */}
+        <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: 340, background: "none", zIndex: 4, pointerEvents: "none" }} />
+        {hasMounted && (
+          <div style={{ position: "relative", zIndex: 5, textAlign: "center", width: "100%", marginTop: 60 }}>
+            <h1 className="banner-title" style={{ background: "linear-gradient(92deg, #fffbe6 5%, #e6c36a 20%, #bfa14a 40%, #ffd700 60%, #bfa14a 80%, #fffbe6 95%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", fontFamily: "'Cinzel', 'Playfair Display', serif", fontSize: "2.7em", fontWeight: 700, letterSpacing: 2, textAlign: "center", textShadow: "0 2px 24px #000, 0 0 8px #bfa14a99, 0 1px 0 #fffbe6, 0 2px 8px #000a", opacity: 1 }}>
+              <span ref={devilRef} className="devil-glow" style={{ color: "#fffbe6", textShadow: "0 0 18px #7f00ff, 0 0 32px #ffd700, 0 0 48px #7f00ff" }}>Devil</span>lier Media
+            </h1>
+            <div style={{ marginTop: 18, fontFamily: "'Cinzel',serif", fontSize: "1.15em", color: "#ffd700", fontWeight: 700, letterSpacing: 1, textShadow: "0 2px 8px #000a" }}>{content.header.availableNow}</div>
+            <p className="banner-tagline" style={{ marginTop: 10, background: "linear-gradient(90deg, #fffbe6 10%, #e6c36a 40%, #ffd700 60%, #bfa14a 90%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text", fontFamily: "'Playfair Display', serif", fontSize: "1.3em", fontStyle: "italic", textShadow: "0 2px 12px #000, 0 0 6px #ffd70099", opacity: showTagline ? 1 : 0, transition: "opacity 0.4s" }}>
+              {taglines[taglineIdx]}
+            </p>
+          </div>
+        )}
+      </section>
+      {/* Library Video and Quotes Section moved to bottom */}
+      <div style={{ width: "100vw", background: "#101014", paddingTop: 32, paddingBottom: 0, display: "flex", flexDirection: "column", alignItems: "center", marginTop: 64 }}>
         <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "stretch", width: "100%", maxWidth: 1200, gap: 32, marginBottom: 18 }}>
           {/* Albert Einstein Quote - Left */}
           <div style={{ flex: 1, color: "#ffd700", fontFamily: "'Playfair Display', serif", fontSize: "1.18em", fontStyle: "italic", fontWeight: 600, letterSpacing: 0.5, textShadow: "0 2px 8px #000a", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-end", textAlign: "right", paddingRight: 12 }}>
@@ -161,7 +182,6 @@ export default function ServicesPage() {
             </div>
           </div>
         </div>
-        {/* Removed top Devillier Media banner section as requested */}
       </div>
 
 
