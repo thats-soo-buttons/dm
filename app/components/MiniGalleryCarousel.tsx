@@ -1,3 +1,4 @@
+export { GALLERY_IMAGES };
 import { useEffect, useState } from "react";
 
 // Utility to get random elements from an array
